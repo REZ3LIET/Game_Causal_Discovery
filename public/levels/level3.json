@@ -1,24 +1,62 @@
 {
-  "id": 3,
-  "title": "Level 3",
-  "subtitle": "No free observations. Use your interventions wisely.",
-  "variables": ["A", "B", "C"],
-  "order": ["B", "A", "C"],
-  "observations": [],
-  "interventionBudget": 5,
-  "scm": {
-    "B": { "parents": [], "pTrue": 0.5 },
-    "A": { "parents": ["B"], "pIfAll": 0.85, "pElse": 0.1 },
-    "C": { "parents": ["B"], "pIfAll": 0.8, "pElse": 0.15 }
-  },
-  "groundTruth": [
-    ["B", "A"],
-    ["B", "C"]
-  ],
-  "hint": "All three variables are correlated. That doesn't mean they're all connected directly.",
-  "nodePositions": {
-    "A": { "x": 80, "y": 240 },
-    "B": { "x": 220, "y": 80 },
-    "C": { "x": 360, "y": 240 }
-  }
+    "id": 3,
+    "title": "Level 3",
+    "subtitle": "Introduction: No free observations. Use your interventions wisely.",
+    "variables": [
+        "A",
+        "B",
+        "C"
+    ],
+    "order": [
+        "B",
+        "A",
+        "C"
+    ],
+    "observations": [],
+    "interventionBudget": 5,
+    "scm": {
+        "B": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "A": {
+            "parents": [
+                "B"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        },
+        "C": {
+            "parents": [
+                "B"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.15
+        }
+    },
+    "groundTruth": [
+        [
+            "B",
+            "A"
+        ],
+        [
+            "B",
+            "C"
+        ]
+    ],
+    "hint": "All three variables are correlated. That doesn't mean they're all connected directly.",
+    "nodePositions": {
+        "A": {
+            "x": 100,
+            "y": 100
+        },
+        "B": {
+            "x": 200,
+            "y": 200
+        },
+        "C": {
+            "x": 300,
+            "y": 300
+        }
+    }
 }

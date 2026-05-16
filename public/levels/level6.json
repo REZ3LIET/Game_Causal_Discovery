@@ -1,20 +1,65 @@
 {
-  "id": 6,
-  "title": "Level 6",
-  "subtitle": "CLADDER: Coffee and grades are correlated. Is coffee causal?",
-  "variables": ["Study", "Coffee", "Grades"],
-  "order": ["Study", "Coffee", "Grades"],
-  "observations": [
-    "Students who drink more coffee tend to have higher grades.",
-    "Students who study more also tend to drink more coffee."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Study": { "parents": [], "pTrue": 0.5 },
-    "Coffee": { "parents": ["Study"], "pIfAll": 0.8, "pElse": 0.2 },
-    "Grades": { "parents": ["Study"], "pIfAll": 0.85, "pElse": 0.15 }
-  },
-  "groundTruth": [["Study", "Coffee"], ["Study", "Grades"]],
-  "hint": "Coffee and grades move together, but what happens if you force coffee consumption directly?",
-  "nodePositions": { "Study": {"x": 220, "y": 60}, "Coffee": {"x": 80, "y": 240}, "Grades": {"x": 360, "y": 240} }
+    "id": 6,
+    "title": "Level 6",
+    "subtitle": "CLADDER: Coffee and grades are correlated. Is coffee causal?",
+    "variables": [
+        "Study",
+        "Coffee",
+        "Grades"
+    ],
+    "order": [
+        "Study",
+        "Coffee",
+        "Grades"
+    ],
+    "observations": [
+        "Students who drink more coffee tend to have higher grades.",
+        "Students who study more also tend to drink more coffee."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Study": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Coffee": {
+            "parents": [
+                "Study"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.2
+        },
+        "Grades": {
+            "parents": [
+                "Study"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.15
+        }
+    },
+    "groundTruth": [
+        [
+            "Study",
+            "Coffee"
+        ],
+        [
+            "Study",
+            "Grades"
+        ]
+    ],
+    "hint": "Coffee and grades move together, but what happens if you force coffee consumption directly?",
+    "nodePositions": {
+        "Study": {
+            "x": 100,
+            "y": 100
+        },
+        "Coffee": {
+            "x": 200,
+            "y": 200
+        },
+        "Grades": {
+            "x": 300,
+            "y": 300
+        }
+    }
 }

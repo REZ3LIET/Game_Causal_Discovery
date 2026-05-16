@@ -1,33 +1,85 @@
 {
-  "id": 5,
-  "title": "Level 5",
-  "subtitle": "Four variables. No hints. Figure it out.",
-  "variables": ["A", "B", "C", "D"],
-  "order": ["A", "B", "C", "D"],
-  "observations": [],
-  "interventionBudget": 6,
-  "scm": {
-    "A": { "parents": [], "pTrue": 0.5 },
-    "B": { "parents": ["A"], "pIfAll": 0.85, "pElse": 0.1 },
-    "C": { "parents": ["A"], "pIfAll": 0.75, "pElse": 0.2 },
-    "D": {
-      "parents": ["B", "C"],
-      "condition": "B === 1 || C === 1",
-      "pIfTrue": 0.88,
-      "pElse": 0.05
+    "id": 5,
+    "title": "Level 5",
+    "subtitle": "Introduction: Four variables. No hints. Figure it out.",
+    "variables": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "order": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "observations": [],
+    "interventionBudget": 6,
+    "scm": {
+        "A": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "B": {
+            "parents": [
+                "A"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        },
+        "C": {
+            "parents": [
+                "A"
+            ],
+            "pIfAll": 0.75,
+            "pElse": 0.2
+        },
+        "D": {
+            "parents": [
+                "B",
+                "C"
+            ],
+            "condition": "B === 1 || C === 1",
+            "pIfTrue": 0.88,
+            "pElse": 0.05
+        }
+    },
+    "groundTruth": [
+        [
+            "A",
+            "B"
+        ],
+        [
+            "A",
+            "C"
+        ],
+        [
+            "B",
+            "D"
+        ],
+        [
+            "C",
+            "D"
+        ]
+    ],
+    "hint": null,
+    "nodePositions": {
+        "A": {
+            "x": 100,
+            "y": 100
+        },
+        "B": {
+            "x": 200,
+            "y": 200
+        },
+        "C": {
+            "x": 300,
+            "y": 300
+        },
+        "D": {
+            "x": 400,
+            "y": 400
+        }
     }
-  },
-  "groundTruth": [
-    ["A", "B"],
-    ["A", "C"],
-    ["B", "D"],
-    ["C", "D"]
-  ],
-  "hint": null,
-  "nodePositions": {
-    "A": { "x": 220, "y": 60 },
-    "B": { "x": 80, "y": 220 },
-    "C": { "x": 360, "y": 220 },
-    "D": { "x": 220, "y": 380 }
-  }
 }

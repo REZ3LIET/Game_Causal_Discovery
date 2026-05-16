@@ -1,101 +1,101 @@
 {
-  "id": 40,
-  "title": "Level 40",
-  "subtitle": "Advanced: Five variables, multiple paths.",
-  "variables": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E"
-  ],
-  "order": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E"
-  ],
-  "observations": [],
-  "interventionBudget": 8,
-  "scm": {
-    "A": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "B": {
-      "parents": [
-        "A"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.1
-    },
-    "C": {
-      "parents": [
-        "A"
-      ],
-      "pIfAll": 0.8,
-      "pElse": 0.15
-    },
-    "D": {
-      "parents": [
+    "id": 40,
+    "title": "Level 40",
+    "subtitle": "Advanced: Five variables, multiple paths.",
+    "variables": [
+        "A",
         "B",
-        "C"
-      ],
-      "pIfAny": 0.85,
-      "pElse": 0.05
+        "C",
+        "D",
+        "E"
+    ],
+    "order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+    ],
+    "observations": [],
+    "interventionBudget": 8,
+    "scm": {
+        "A": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "B": {
+            "parents": [
+                "A"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        },
+        "C": {
+            "parents": [
+                "A"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.15
+        },
+        "D": {
+            "parents": [
+                "B",
+                "C"
+            ],
+            "pIfAny": 0.85,
+            "pElse": 0.05
+        },
+        "E": {
+            "parents": [
+                "D"
+            ],
+            "pIfAll": 0.9,
+            "pElse": 0.1
+        }
     },
-    "E": {
-      "parents": [
-        "D"
-      ],
-      "pIfAll": 0.9,
-      "pElse": 0.1
+    "groundTruth": [
+        [
+            "A",
+            "B"
+        ],
+        [
+            "A",
+            "C"
+        ],
+        [
+            "B",
+            "D"
+        ],
+        [
+            "C",
+            "D"
+        ],
+        [
+            "D",
+            "E"
+        ]
+    ],
+    "hint": null,
+    "nodePositions": {
+        "A": {
+            "x": 100,
+            "y": 100
+        },
+        "B": {
+            "x": 200,
+            "y": 200
+        },
+        "C": {
+            "x": 300,
+            "y": 300
+        },
+        "D": {
+            "x": 400,
+            "y": 400
+        },
+        "E": {
+            "x": 500,
+            "y": 500
+        }
     }
-  },
-  "groundTruth": [
-    [
-      "A",
-      "B"
-    ],
-    [
-      "A",
-      "C"
-    ],
-    [
-      "B",
-      "D"
-    ],
-    [
-      "C",
-      "D"
-    ],
-    [
-      "D",
-      "E"
-    ]
-  ],
-  "hint": null,
-  "nodePositions": {
-    "A": {
-      "x": 220,
-      "y": 40
-    },
-    "B": {
-      "x": 80,
-      "y": 180
-    },
-    "C": {
-      "x": 360,
-      "y": 180
-    },
-    "D": {
-      "x": 220,
-      "y": 320
-    },
-    "E": {
-      "x": 220,
-      "y": 450
-    }
-  }
 }

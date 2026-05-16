@@ -1,70 +1,70 @@
 {
-  "id": 10,
-  "title": "Level 10",
-  "subtitle": "CLADDER: Does smoking cause cancer, or is there a common cause?",
-  "variables": [
-    "Genetics",
-    "Smoking",
-    "Cancer"
-  ],
-  "order": [
-    "Genetics",
-    "Smoking",
-    "Cancer"
-  ],
-  "observations": [
-    "Smokers have higher rates of cancer.",
-    "Certain genetic profiles are associated with both smoking tendency and cancer risk."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Genetics": {
-      "parents": [],
-      "pTrue": 0.3
-    },
-    "Smoking": {
-      "parents": [
-        "Genetics"
-      ],
-      "pIfAll": 0.75,
-      "pElse": 0.3
-    },
-    "Cancer": {
-      "parents": [
+    "id": 10,
+    "title": "Level 10",
+    "subtitle": "CLADDER: Does smoking cause cancer, or is there a common cause?",
+    "variables": [
         "Genetics",
-        "Smoking"
-      ],
-      "pIfAny": 0.8,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "Genetics",
-      "Smoking"
+        "Smoking",
+        "Cancer"
     ],
-    [
-      "Genetics",
-      "Cancer"
+    "order": [
+        "Genetics",
+        "Smoking",
+        "Cancer"
     ],
-    [
-      "Smoking",
-      "Cancer"
-    ]
-  ],
-  "hint": "Both genes and smoking may independently cause cancer. Intervene on each.",
-  "nodePositions": {
-    "Genetics": {
-      "x": 220,
-      "y": 60
+    "observations": [
+        "Smokers have higher rates of cancer.",
+        "Certain genetic profiles are associated with both smoking tendency and cancer risk."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Genetics": {
+            "parents": [],
+            "pTrue": 0.3
+        },
+        "Smoking": {
+            "parents": [
+                "Genetics"
+            ],
+            "pIfAll": 0.75,
+            "pElse": 0.3
+        },
+        "Cancer": {
+            "parents": [
+                "Genetics",
+                "Smoking"
+            ],
+            "pIfAny": 0.8,
+            "pElse": 0.05
+        }
     },
-    "Smoking": {
-      "x": 80,
-      "y": 240
-    },
-    "Cancer": {
-      "x": 360,
-      "y": 240
+    "groundTruth": [
+        [
+            "Genetics",
+            "Smoking"
+        ],
+        [
+            "Genetics",
+            "Cancer"
+        ],
+        [
+            "Smoking",
+            "Cancer"
+        ]
+    ],
+    "hint": "Both genes and smoking may independently cause cancer. Intervene on each.",
+    "nodePositions": {
+        "Genetics": {
+            "x": 100,
+            "y": 100
+        },
+        "Smoking": {
+            "x": 200,
+            "y": 200
+        },
+        "Cancer": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

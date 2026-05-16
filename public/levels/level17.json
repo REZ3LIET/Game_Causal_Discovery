@@ -1,64 +1,64 @@
 {
-  "id": 17,
-  "title": "Level 17",
-  "subtitle": "CLADDER: Alarm, burglary, and earthquake \u2014 a classic collider.",
-  "variables": [
-    "Burglary",
-    "Earthquake",
-    "Alarm"
-  ],
-  "order": [
-    "Burglary",
-    "Earthquake",
-    "Alarm"
-  ],
-  "observations": [
-    "A burglar alarm goes off when there's a burglary.",
-    "Earthquakes can also trigger burglar alarms.",
-    "Burglaries and earthquakes seem unrelated in general."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Burglary": {
-      "parents": [],
-      "pTrue": 0.1
-    },
-    "Earthquake": {
-      "parents": [],
-      "pTrue": 0.2
-    },
-    "Alarm": {
-      "parents": [
+    "id": 17,
+    "title": "Level 17",
+    "subtitle": "CLADDER: Alarm, burglary, and earthquake \u2014 a classic collider.",
+    "variables": [
         "Burglary",
-        "Earthquake"
-      ],
-      "pIfAny": 0.94,
-      "pElse": 0.01
-    }
-  },
-  "groundTruth": [
-    [
-      "Burglary",
-      "Alarm"
+        "Earthquake",
+        "Alarm"
     ],
-    [
-      "Earthquake",
-      "Alarm"
-    ]
-  ],
-  "hint": "The alarm is triggered by two independent events. What does intervening on each reveal?",
-  "nodePositions": {
-    "Burglary": {
-      "x": 80,
-      "y": 80
+    "order": [
+        "Burglary",
+        "Earthquake",
+        "Alarm"
+    ],
+    "observations": [
+        "A burglar alarm goes off when there's a burglary.",
+        "Earthquakes can also trigger burglar alarms.",
+        "Burglaries and earthquakes seem unrelated in general."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Burglary": {
+            "parents": [],
+            "pTrue": 0.1
+        },
+        "Earthquake": {
+            "parents": [],
+            "pTrue": 0.2
+        },
+        "Alarm": {
+            "parents": [
+                "Burglary",
+                "Earthquake"
+            ],
+            "pIfAny": 0.94,
+            "pElse": 0.01
+        }
     },
-    "Earthquake": {
-      "x": 360,
-      "y": 80
-    },
-    "Alarm": {
-      "x": 220,
-      "y": 270
+    "groundTruth": [
+        [
+            "Burglary",
+            "Alarm"
+        ],
+        [
+            "Earthquake",
+            "Alarm"
+        ]
+    ],
+    "hint": "The alarm is triggered by two independent events. What does intervening on each reveal?",
+    "nodePositions": {
+        "Burglary": {
+            "x": 100,
+            "y": 100
+        },
+        "Earthquake": {
+            "x": 200,
+            "y": 200
+        },
+        "Alarm": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

@@ -1,72 +1,72 @@
 {
-  "id": 12,
-  "title": "Level 12",
-  "subtitle": "CLADDER: Exercise, weight, and heart disease.",
-  "variables": [
-    "Exercise",
-    "Weight",
-    "HeartDisease"
-  ],
-  "order": [
-    "Exercise",
-    "Weight",
-    "HeartDisease"
-  ],
-  "observations": [
-    "People who exercise more tend to weigh less.",
-    "Higher weight is associated with more heart disease.",
-    "Exercise also appears directly linked to lower heart disease rates."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Exercise": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Weight": {
-      "parents": [
-        "Exercise"
-      ],
-      "pIfAll": 0.2,
-      "pElse": 0.75
-    },
-    "HeartDisease": {
-      "parents": [
+    "id": 12,
+    "title": "Level 12",
+    "subtitle": "CLADDER: Exercise, weight, and heart disease.",
+    "variables": [
         "Exercise",
-        "Weight"
-      ],
-      "pIfAll": 0.15,
-      "pElse": 0.7,
-      "pIfNone": 0.6
-    }
-  },
-  "groundTruth": [
-    [
-      "Exercise",
-      "Weight"
+        "Weight",
+        "HeartDisease"
     ],
-    [
-      "Exercise",
-      "HeartDisease"
+    "order": [
+        "Exercise",
+        "Weight",
+        "HeartDisease"
     ],
-    [
-      "Weight",
-      "HeartDisease"
-    ]
-  ],
-  "hint": "Exercise affects heart disease both directly and through weight.",
-  "nodePositions": {
-    "Exercise": {
-      "x": 80,
-      "y": 60
+    "observations": [
+        "People who exercise more tend to weigh less.",
+        "Higher weight is associated with more heart disease.",
+        "Exercise also appears directly linked to lower heart disease rates."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Exercise": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Weight": {
+            "parents": [
+                "Exercise"
+            ],
+            "pIfAll": 0.2,
+            "pElse": 0.75
+        },
+        "HeartDisease": {
+            "parents": [
+                "Exercise",
+                "Weight"
+            ],
+            "pIfAll": 0.15,
+            "pElse": 0.7,
+            "pIfNone": 0.6
+        }
     },
-    "Weight": {
-      "x": 360,
-      "y": 60
-    },
-    "HeartDisease": {
-      "x": 220,
-      "y": 280
+    "groundTruth": [
+        [
+            "Exercise",
+            "Weight"
+        ],
+        [
+            "Exercise",
+            "HeartDisease"
+        ],
+        [
+            "Weight",
+            "HeartDisease"
+        ]
+    ],
+    "hint": "Exercise affects heart disease both directly and through weight.",
+    "nodePositions": {
+        "Exercise": {
+            "x": 100,
+            "y": 100
+        },
+        "Weight": {
+            "x": 200,
+            "y": 200
+        },
+        "HeartDisease": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

@@ -1,70 +1,70 @@
 {
-  "id": 13,
-  "title": "Level 13",
-  "subtitle": "CLADDER: Does education cause higher income?",
-  "variables": [
-    "Ability",
-    "Education",
-    "Income"
-  ],
-  "order": [
-    "Ability",
-    "Education",
-    "Income"
-  ],
-  "observations": [
-    "More educated people tend to earn more.",
-    "Higher ability predicts both more education and higher income."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Ability": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Education": {
-      "parents": [
-        "Ability"
-      ],
-      "pIfAll": 0.8,
-      "pElse": 0.3
-    },
-    "Income": {
-      "parents": [
+    "id": 13,
+    "title": "Level 13",
+    "subtitle": "CLADDER: Does education cause higher income?",
+    "variables": [
         "Ability",
-        "Education"
-      ],
-      "pIfAny": 0.85,
-      "pElse": 0.1
-    }
-  },
-  "groundTruth": [
-    [
-      "Ability",
-      "Education"
+        "Education",
+        "Income"
     ],
-    [
-      "Ability",
-      "Income"
+    "order": [
+        "Ability",
+        "Education",
+        "Income"
     ],
-    [
-      "Education",
-      "Income"
-    ]
-  ],
-  "hint": "Ability is a confounder. Does education still affect income after controlling for ability?",
-  "nodePositions": {
-    "Ability": {
-      "x": 220,
-      "y": 60
+    "observations": [
+        "More educated people tend to earn more.",
+        "Higher ability predicts both more education and higher income."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Ability": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Education": {
+            "parents": [
+                "Ability"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.3
+        },
+        "Income": {
+            "parents": [
+                "Ability",
+                "Education"
+            ],
+            "pIfAny": 0.85,
+            "pElse": 0.1
+        }
     },
-    "Education": {
-      "x": 80,
-      "y": 240
-    },
-    "Income": {
-      "x": 360,
-      "y": 240
+    "groundTruth": [
+        [
+            "Ability",
+            "Education"
+        ],
+        [
+            "Ability",
+            "Income"
+        ],
+        [
+            "Education",
+            "Income"
+        ]
+    ],
+    "hint": "Ability is a confounder. Does education still affect income after controlling for ability?",
+    "nodePositions": {
+        "Ability": {
+            "x": 100,
+            "y": 100
+        },
+        "Education": {
+            "x": 200,
+            "y": 200
+        },
+        "Income": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

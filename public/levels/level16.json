@@ -1,65 +1,65 @@
 {
-  "id": 16,
-  "title": "Level 16",
-  "subtitle": "CLADDER: Rain, wet roads, and accidents.",
-  "variables": [
-    "Rain",
-    "WetRoad",
-    "Accident"
-  ],
-  "order": [
-    "Rain",
-    "WetRoad",
-    "Accident"
-  ],
-  "observations": [
-    "Accidents are more common on wet roads.",
-    "Rain makes roads wet."
-  ],
-  "interventionBudget": 3,
-  "scm": {
-    "Rain": {
-      "parents": [],
-      "pTrue": 0.4
-    },
-    "WetRoad": {
-      "parents": [
-        "Rain"
-      ],
-      "pIfAll": 0.95,
-      "pElse": 0.05
-    },
-    "Accident": {
-      "parents": [
-        "WetRoad"
-      ],
-      "pIfAll": 0.6,
-      "pElse": 0.1
-    }
-  },
-  "groundTruth": [
-    [
-      "Rain",
-      "WetRoad"
+    "id": 16,
+    "title": "Level 16",
+    "subtitle": "CLADDER: Rain, wet roads, and accidents.",
+    "variables": [
+        "Rain",
+        "WetRoad",
+        "Accident"
     ],
-    [
-      "WetRoad",
-      "Accident"
-    ]
-  ],
-  "hint": "Does rain directly cause accidents, or only through making roads wet?",
-  "nodePositions": {
-    "Rain": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "Rain",
+        "WetRoad",
+        "Accident"
+    ],
+    "observations": [
+        "Accidents are more common on wet roads.",
+        "Rain makes roads wet."
+    ],
+    "interventionBudget": 3,
+    "scm": {
+        "Rain": {
+            "parents": [],
+            "pTrue": 0.4
+        },
+        "WetRoad": {
+            "parents": [
+                "Rain"
+            ],
+            "pIfAll": 0.95,
+            "pElse": 0.05
+        },
+        "Accident": {
+            "parents": [
+                "WetRoad"
+            ],
+            "pIfAll": 0.6,
+            "pElse": 0.1
+        }
     },
-    "WetRoad": {
-      "x": 220,
-      "y": 220
-    },
-    "Accident": {
-      "x": 220,
-      "y": 380
+    "groundTruth": [
+        [
+            "Rain",
+            "WetRoad"
+        ],
+        [
+            "WetRoad",
+            "Accident"
+        ]
+    ],
+    "hint": "Does rain directly cause accidents, or only through making roads wet?",
+    "nodePositions": {
+        "Rain": {
+            "x": 100,
+            "y": 100
+        },
+        "WetRoad": {
+            "x": 200,
+            "y": 200
+        },
+        "Accident": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

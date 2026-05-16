@@ -1,71 +1,71 @@
 {
-  "id": 42,
-  "title": "Level 42",
-  "subtitle": "Advanced: Mediation with a bypass.",
-  "variables": [
-    "Treatment",
-    "Mediator",
-    "Outcome"
-  ],
-  "order": [
-    "Treatment",
-    "Mediator",
-    "Outcome"
-  ],
-  "observations": [
-    "Treatment improves outcomes.",
-    "Treatment also increases the mediator level.",
-    "Higher mediator levels also improve outcomes."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Treatment": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Mediator": {
-      "parents": [
-        "Treatment"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.15
-    },
-    "Outcome": {
-      "parents": [
+    "id": 42,
+    "title": "Level 42",
+    "subtitle": "Advanced: Mediation with a bypass.",
+    "variables": [
         "Treatment",
-        "Mediator"
-      ],
-      "pIfAny": 0.88,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "Treatment",
-      "Mediator"
+        "Mediator",
+        "Outcome"
     ],
-    [
-      "Treatment",
-      "Outcome"
+    "order": [
+        "Treatment",
+        "Mediator",
+        "Outcome"
     ],
-    [
-      "Mediator",
-      "Outcome"
-    ]
-  ],
-  "hint": "Treatment works both directly and through the mediator.",
-  "nodePositions": {
-    "Treatment": {
-      "x": 80,
-      "y": 60
+    "observations": [
+        "Treatment improves outcomes.",
+        "Treatment also increases the mediator level.",
+        "Higher mediator levels also improve outcomes."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Treatment": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Mediator": {
+            "parents": [
+                "Treatment"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.15
+        },
+        "Outcome": {
+            "parents": [
+                "Treatment",
+                "Mediator"
+            ],
+            "pIfAny": 0.88,
+            "pElse": 0.05
+        }
     },
-    "Mediator": {
-      "x": 360,
-      "y": 60
-    },
-    "Outcome": {
-      "x": 220,
-      "y": 280
+    "groundTruth": [
+        [
+            "Treatment",
+            "Mediator"
+        ],
+        [
+            "Treatment",
+            "Outcome"
+        ],
+        [
+            "Mediator",
+            "Outcome"
+        ]
+    ],
+    "hint": "Treatment works both directly and through the mediator.",
+    "nodePositions": {
+        "Treatment": {
+            "x": 100,
+            "y": 100
+        },
+        "Mediator": {
+            "x": 200,
+            "y": 200
+        },
+        "Outcome": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

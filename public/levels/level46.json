@@ -1,65 +1,65 @@
 {
-  "id": 46,
-  "title": "Level 46",
-  "subtitle": "Real world: Vaccine, immunity, and infection.",
-  "variables": [
-    "Vaccine",
-    "Immunity",
-    "Infection"
-  ],
-  "order": [
-    "Vaccine",
-    "Immunity",
-    "Infection"
-  ],
-  "observations": [
-    "Vaccinated individuals have higher immunity.",
-    "Higher immunity reduces infection risk."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Vaccine": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Immunity": {
-      "parents": [
-        "Vaccine"
-      ],
-      "pIfAll": 0.9,
-      "pElse": 0.2
-    },
-    "Infection": {
-      "parents": [
-        "Immunity"
-      ],
-      "pIfAll": 0.05,
-      "pElse": 0.7
-    }
-  },
-  "groundTruth": [
-    [
-      "Vaccine",
-      "Immunity"
+    "id": 46,
+    "title": "Level 46",
+    "subtitle": "Real world: Vaccine, immunity, and infection.",
+    "variables": [
+        "Vaccine",
+        "Immunity",
+        "Infection"
     ],
-    [
-      "Immunity",
-      "Infection"
-    ]
-  ],
-  "hint": "Vaccination works through building immunity \u2014 not directly.",
-  "nodePositions": {
-    "Vaccine": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "Vaccine",
+        "Immunity",
+        "Infection"
+    ],
+    "observations": [
+        "Vaccinated individuals have higher immunity.",
+        "Higher immunity reduces infection risk."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Vaccine": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Immunity": {
+            "parents": [
+                "Vaccine"
+            ],
+            "pIfAll": 0.9,
+            "pElse": 0.2
+        },
+        "Infection": {
+            "parents": [
+                "Immunity"
+            ],
+            "pIfAll": 0.05,
+            "pElse": 0.7
+        }
     },
-    "Immunity": {
-      "x": 220,
-      "y": 220
-    },
-    "Infection": {
-      "x": 220,
-      "y": 380
+    "groundTruth": [
+        [
+            "Vaccine",
+            "Immunity"
+        ],
+        [
+            "Immunity",
+            "Infection"
+        ]
+    ],
+    "hint": "Vaccination works through building immunity \u2014 not directly.",
+    "nodePositions": {
+        "Vaccine": {
+            "x": 100,
+            "y": 100
+        },
+        "Immunity": {
+            "x": 200,
+            "y": 200
+        },
+        "Infection": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

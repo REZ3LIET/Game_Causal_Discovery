@@ -1,65 +1,65 @@
 {
-  "id": 34,
-  "title": "Level 34",
-  "subtitle": "Tubingen: Financial stress and depression.",
-  "variables": [
-    "FinancialStress",
-    "Depression",
-    "SocialWithdrawal"
-  ],
-  "order": [
-    "FinancialStress",
-    "Depression",
-    "SocialWithdrawal"
-  ],
-  "observations": [
-    "Financial stress correlates with depression.",
-    "Depressed individuals tend to withdraw socially."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "FinancialStress": {
-      "parents": [],
-      "pTrue": 0.4
-    },
-    "Depression": {
-      "parents": [
-        "FinancialStress"
-      ],
-      "pIfAll": 0.75,
-      "pElse": 0.2
-    },
-    "SocialWithdrawal": {
-      "parents": [
-        "Depression"
-      ],
-      "pIfAll": 0.8,
-      "pElse": 0.15
-    }
-  },
-  "groundTruth": [
-    [
-      "FinancialStress",
-      "Depression"
+    "id": 34,
+    "title": "Level 34",
+    "subtitle": "Tubingen: Financial stress and depression.",
+    "variables": [
+        "FinancialStress",
+        "Depression",
+        "SocialWithdrawal"
     ],
-    [
-      "Depression",
-      "SocialWithdrawal"
-    ]
-  ],
-  "hint": "Financial stress flows through depression to withdrawal. Is any link direct?",
-  "nodePositions": {
-    "FinancialStress": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "FinancialStress",
+        "Depression",
+        "SocialWithdrawal"
+    ],
+    "observations": [
+        "Financial stress correlates with depression.",
+        "Depressed individuals tend to withdraw socially."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "FinancialStress": {
+            "parents": [],
+            "pTrue": 0.4
+        },
+        "Depression": {
+            "parents": [
+                "FinancialStress"
+            ],
+            "pIfAll": 0.75,
+            "pElse": 0.2
+        },
+        "SocialWithdrawal": {
+            "parents": [
+                "Depression"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.15
+        }
     },
-    "Depression": {
-      "x": 220,
-      "y": 220
-    },
-    "SocialWithdrawal": {
-      "x": 220,
-      "y": 380
+    "groundTruth": [
+        [
+            "FinancialStress",
+            "Depression"
+        ],
+        [
+            "Depression",
+            "SocialWithdrawal"
+        ]
+    ],
+    "hint": "Financial stress flows through depression to withdrawal. Is any link direct?",
+    "nodePositions": {
+        "FinancialStress": {
+            "x": 100,
+            "y": 100
+        },
+        "Depression": {
+            "x": 200,
+            "y": 200
+        },
+        "SocialWithdrawal": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

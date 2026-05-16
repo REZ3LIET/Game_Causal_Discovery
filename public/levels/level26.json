@@ -1,78 +1,78 @@
 {
-  "id": 26,
-  "title": "Level 26",
-  "subtitle": "Corr2Cause: Three independent root causes.",
-  "variables": [
-    "A",
-    "B",
-    "C",
-    "D"
-  ],
-  "order": [
-    "A",
-    "B",
-    "C",
-    "D"
-  ],
-  "observations": [
-    "D is correlated with A, B, and C separately.",
-    "A, B, and C appear unrelated to each other."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "A": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "B": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "C": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "D": {
-      "parents": [
+    "id": 26,
+    "title": "Level 26",
+    "subtitle": "Corr2Cause: Three independent root causes.",
+    "variables": [
         "A",
         "B",
-        "C"
-      ],
-      "pIfAny": 0.88,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "A",
-      "D"
+        "C",
+        "D"
     ],
-    [
-      "B",
-      "D"
+    "order": [
+        "A",
+        "B",
+        "C",
+        "D"
     ],
-    [
-      "C",
-      "D"
-    ]
-  ],
-  "hint": "Each of A, B, C independently causes D. Do they cause each other?",
-  "nodePositions": {
-    "A": {
-      "x": 60,
-      "y": 60
+    "observations": [
+        "D is correlated with A, B, and C separately.",
+        "A, B, and C appear unrelated to each other."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "A": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "B": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "C": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "D": {
+            "parents": [
+                "A",
+                "B",
+                "C"
+            ],
+            "pIfAny": 0.88,
+            "pElse": 0.05
+        }
     },
-    "B": {
-      "x": 220,
-      "y": 60
-    },
-    "C": {
-      "x": 380,
-      "y": 60
-    },
-    "D": {
-      "x": 220,
-      "y": 300
+    "groundTruth": [
+        [
+            "A",
+            "D"
+        ],
+        [
+            "B",
+            "D"
+        ],
+        [
+            "C",
+            "D"
+        ]
+    ],
+    "hint": "Each of A, B, C independently causes D. Do they cause each other?",
+    "nodePositions": {
+        "A": {
+            "x": 100,
+            "y": 100
+        },
+        "B": {
+            "x": 200,
+            "y": 200
+        },
+        "C": {
+            "x": 300,
+            "y": 300
+        },
+        "D": {
+            "x": 400,
+            "y": 400
+        }
     }
-  }
 }

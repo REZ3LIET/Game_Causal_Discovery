@@ -1,71 +1,71 @@
 {
-  "id": 36,
-  "title": "Level 36",
-  "subtitle": "Tubingen: Soil quality, irrigation, and crop yield.",
-  "variables": [
-    "SoilQuality",
-    "Irrigation",
-    "CropYield"
-  ],
-  "order": [
-    "SoilQuality",
-    "Irrigation",
-    "CropYield"
-  ],
-  "observations": [
-    "Good soil quality is associated with higher crop yields.",
-    "Irrigation decisions are made based on soil type.",
-    "Irrigation also directly boosts yield."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "SoilQuality": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Irrigation": {
-      "parents": [
-        "SoilQuality"
-      ],
-      "pIfAll": 0.7,
-      "pElse": 0.3
-    },
-    "CropYield": {
-      "parents": [
+    "id": 36,
+    "title": "Level 36",
+    "subtitle": "Tubingen: Soil quality, irrigation, and crop yield.",
+    "variables": [
         "SoilQuality",
-        "Irrigation"
-      ],
-      "pIfAny": 0.87,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "SoilQuality",
-      "Irrigation"
+        "Irrigation",
+        "CropYield"
     ],
-    [
-      "SoilQuality",
-      "CropYield"
+    "order": [
+        "SoilQuality",
+        "Irrigation",
+        "CropYield"
     ],
-    [
-      "Irrigation",
-      "CropYield"
-    ]
-  ],
-  "hint": "Soil affects both irrigation choice and yield directly.",
-  "nodePositions": {
-    "SoilQuality": {
-      "x": 80,
-      "y": 60
+    "observations": [
+        "Good soil quality is associated with higher crop yields.",
+        "Irrigation decisions are made based on soil type.",
+        "Irrigation also directly boosts yield."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "SoilQuality": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Irrigation": {
+            "parents": [
+                "SoilQuality"
+            ],
+            "pIfAll": 0.7,
+            "pElse": 0.3
+        },
+        "CropYield": {
+            "parents": [
+                "SoilQuality",
+                "Irrigation"
+            ],
+            "pIfAny": 0.87,
+            "pElse": 0.05
+        }
     },
-    "Irrigation": {
-      "x": 360,
-      "y": 60
-    },
-    "CropYield": {
-      "x": 220,
-      "y": 280
+    "groundTruth": [
+        [
+            "SoilQuality",
+            "Irrigation"
+        ],
+        [
+            "SoilQuality",
+            "CropYield"
+        ],
+        [
+            "Irrigation",
+            "CropYield"
+        ]
+    ],
+    "hint": "Soil affects both irrigation choice and yield directly.",
+    "nodePositions": {
+        "SoilQuality": {
+            "x": 100,
+            "y": 100
+        },
+        "Irrigation": {
+            "x": 200,
+            "y": 200
+        },
+        "CropYield": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

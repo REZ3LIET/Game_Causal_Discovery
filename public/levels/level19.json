@@ -1,72 +1,72 @@
 {
-  "id": 19,
-  "title": "Level 19",
-  "subtitle": "CLADDER: Hospital admission and mortality \u2014 selection bias.",
-  "variables": [
-    "Severity",
-    "Admitted",
-    "Death"
-  ],
-  "order": [
-    "Severity",
-    "Admitted",
-    "Death"
-  ],
-  "observations": [
-    "More severe illness leads to hospital admission.",
-    "More severe illness also increases mortality.",
-    "Hospitalized patients sometimes show worse outcomes overall."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Severity": {
-      "parents": [],
-      "pTrue": 0.4
-    },
-    "Admitted": {
-      "parents": [
-        "Severity"
-      ],
-      "pIfAll": 0.9,
-      "pElse": 0.1
-    },
-    "Death": {
-      "parents": [
+    "id": 19,
+    "title": "Level 19",
+    "subtitle": "CLADDER: Hospital admission and mortality \u2014 selection bias.",
+    "variables": [
         "Severity",
-        "Admitted"
-      ],
-      "pIfAll": 0.3,
-      "pElse": 0.6,
-      "pIfNone": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "Severity",
-      "Admitted"
+        "Admitted",
+        "Death"
     ],
-    [
-      "Severity",
-      "Death"
+    "order": [
+        "Severity",
+        "Admitted",
+        "Death"
     ],
-    [
-      "Admitted",
-      "Death"
-    ]
-  ],
-  "hint": "Severity drives both admission and death. Does admission itself affect death?",
-  "nodePositions": {
-    "Severity": {
-      "x": 220,
-      "y": 60
+    "observations": [
+        "More severe illness leads to hospital admission.",
+        "More severe illness also increases mortality.",
+        "Hospitalized patients sometimes show worse outcomes overall."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Severity": {
+            "parents": [],
+            "pTrue": 0.4
+        },
+        "Admitted": {
+            "parents": [
+                "Severity"
+            ],
+            "pIfAll": 0.9,
+            "pElse": 0.1
+        },
+        "Death": {
+            "parents": [
+                "Severity",
+                "Admitted"
+            ],
+            "pIfAll": 0.3,
+            "pElse": 0.6,
+            "pIfNone": 0.05
+        }
     },
-    "Admitted": {
-      "x": 80,
-      "y": 240
-    },
-    "Death": {
-      "x": 360,
-      "y": 240
+    "groundTruth": [
+        [
+            "Severity",
+            "Admitted"
+        ],
+        [
+            "Severity",
+            "Death"
+        ],
+        [
+            "Admitted",
+            "Death"
+        ]
+    ],
+    "hint": "Severity drives both admission and death. Does admission itself affect death?",
+    "nodePositions": {
+        "Severity": {
+            "x": 100,
+            "y": 100
+        },
+        "Admitted": {
+            "x": 200,
+            "y": 200
+        },
+        "Death": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

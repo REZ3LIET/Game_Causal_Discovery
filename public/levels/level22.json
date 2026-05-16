@@ -1,63 +1,63 @@
 {
-  "id": 22,
-  "title": "Level 22",
-  "subtitle": "Corr2Cause: The V-structure trap.",
-  "variables": [
-    "Talent",
-    "Effort",
-    "Success"
-  ],
-  "order": [
-    "Talent",
-    "Effort",
-    "Success"
-  ],
-  "observations": [
-    "Talented and hard-working people both tend to succeed.",
-    "Among successful people, talent and effort seem negatively correlated."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Talent": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Effort": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Success": {
-      "parents": [
+    "id": 22,
+    "title": "Level 22",
+    "subtitle": "Corr2Cause: The V-structure trap.",
+    "variables": [
         "Talent",
-        "Effort"
-      ],
-      "pIfAny": 0.88,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "Talent",
-      "Success"
+        "Effort",
+        "Success"
     ],
-    [
-      "Effort",
-      "Success"
-    ]
-  ],
-  "hint": "Talent and effort are independent. Does intervening on talent affect effort?",
-  "nodePositions": {
-    "Talent": {
-      "x": 80,
-      "y": 80
+    "order": [
+        "Talent",
+        "Effort",
+        "Success"
+    ],
+    "observations": [
+        "Talented and hard-working people both tend to succeed.",
+        "Among successful people, talent and effort seem negatively correlated."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Talent": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Effort": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Success": {
+            "parents": [
+                "Talent",
+                "Effort"
+            ],
+            "pIfAny": 0.88,
+            "pElse": 0.05
+        }
     },
-    "Effort": {
-      "x": 360,
-      "y": 80
-    },
-    "Success": {
-      "x": 220,
-      "y": 280
+    "groundTruth": [
+        [
+            "Talent",
+            "Success"
+        ],
+        [
+            "Effort",
+            "Success"
+        ]
+    ],
+    "hint": "Talent and effort are independent. Does intervening on talent affect effort?",
+    "nodePositions": {
+        "Talent": {
+            "x": 100,
+            "y": 100
+        },
+        "Effort": {
+            "x": 200,
+            "y": 200
+        },
+        "Success": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

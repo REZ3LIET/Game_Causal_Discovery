@@ -1,65 +1,65 @@
 {
-  "id": 32,
-  "title": "Level 32",
-  "subtitle": "Tubingen: Latitude and life expectancy.",
-  "variables": [
-    "Latitude",
-    "Temperature",
-    "LifeExpectancy"
-  ],
-  "order": [
-    "Latitude",
-    "Temperature",
-    "LifeExpectancy"
-  ],
-  "observations": [
-    "Countries at higher latitudes tend to have lower temperatures.",
-    "Countries with lower temperatures sometimes have higher life expectancy."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Latitude": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Temperature": {
-      "parents": [
-        "Latitude"
-      ],
-      "pIfAll": 0.2,
-      "pElse": 0.85
-    },
-    "LifeExpectancy": {
-      "parents": [
-        "Latitude"
-      ],
-      "pIfAll": 0.75,
-      "pElse": 0.35
-    }
-  },
-  "groundTruth": [
-    [
-      "Latitude",
-      "Temperature"
+    "id": 32,
+    "title": "Level 32",
+    "subtitle": "Tubingen: Latitude and life expectancy.",
+    "variables": [
+        "Latitude",
+        "Temperature",
+        "LifeExpectancy"
     ],
-    [
-      "Latitude",
-      "LifeExpectancy"
-    ]
-  ],
-  "hint": "Both temperature and life expectancy vary with latitude. Are they directly linked?",
-  "nodePositions": {
-    "Latitude": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "Latitude",
+        "Temperature",
+        "LifeExpectancy"
+    ],
+    "observations": [
+        "Countries at higher latitudes tend to have lower temperatures.",
+        "Countries with lower temperatures sometimes have higher life expectancy."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Latitude": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Temperature": {
+            "parents": [
+                "Latitude"
+            ],
+            "pIfAll": 0.2,
+            "pElse": 0.85
+        },
+        "LifeExpectancy": {
+            "parents": [
+                "Latitude"
+            ],
+            "pIfAll": 0.75,
+            "pElse": 0.35
+        }
     },
-    "Temperature": {
-      "x": 80,
-      "y": 260
-    },
-    "LifeExpectancy": {
-      "x": 360,
-      "y": 260
+    "groundTruth": [
+        [
+            "Latitude",
+            "Temperature"
+        ],
+        [
+            "Latitude",
+            "LifeExpectancy"
+        ]
+    ],
+    "hint": "Both temperature and life expectancy vary with latitude. Are they directly linked?",
+    "nodePositions": {
+        "Latitude": {
+            "x": 100,
+            "y": 100
+        },
+        "Temperature": {
+            "x": 200,
+            "y": 200
+        },
+        "LifeExpectancy": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

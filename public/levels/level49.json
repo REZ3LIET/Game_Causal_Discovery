@@ -1,65 +1,65 @@
 {
-  "id": 49,
-  "title": "Level 49",
-  "subtitle": "Real world: Sleep deprivation, cortisol, and immune function.",
-  "variables": [
-    "SleepDep",
-    "Cortisol",
-    "ImmuneFunction"
-  ],
-  "order": [
-    "SleepDep",
-    "Cortisol",
-    "ImmuneFunction"
-  ],
-  "observations": [
-    "Sleep deprivation raises cortisol levels.",
-    "High cortisol suppresses immune function."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "SleepDep": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Cortisol": {
-      "parents": [
-        "SleepDep"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.15
-    },
-    "ImmuneFunction": {
-      "parents": [
-        "Cortisol"
-      ],
-      "pIfAll": 0.1,
-      "pElse": 0.85
-    }
-  },
-  "groundTruth": [
-    [
-      "SleepDep",
-      "Cortisol"
+    "id": 49,
+    "title": "Level 49",
+    "subtitle": "Real world: Sleep deprivation, cortisol, and immune function.",
+    "variables": [
+        "SleepDep",
+        "Cortisol",
+        "ImmuneFunction"
     ],
-    [
-      "Cortisol",
-      "ImmuneFunction"
-    ]
-  ],
-  "hint": "The path goes: sleep deprivation \u2192 cortisol \u2192 immune suppression.",
-  "nodePositions": {
-    "SleepDep": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "SleepDep",
+        "Cortisol",
+        "ImmuneFunction"
+    ],
+    "observations": [
+        "Sleep deprivation raises cortisol levels.",
+        "High cortisol suppresses immune function."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "SleepDep": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Cortisol": {
+            "parents": [
+                "SleepDep"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.15
+        },
+        "ImmuneFunction": {
+            "parents": [
+                "Cortisol"
+            ],
+            "pIfAll": 0.1,
+            "pElse": 0.85
+        }
     },
-    "Cortisol": {
-      "x": 220,
-      "y": 220
-    },
-    "ImmuneFunction": {
-      "x": 220,
-      "y": 380
+    "groundTruth": [
+        [
+            "SleepDep",
+            "Cortisol"
+        ],
+        [
+            "Cortisol",
+            "ImmuneFunction"
+        ]
+    ],
+    "hint": "The path goes: sleep deprivation \u2192 cortisol \u2192 immune suppression.",
+    "nodePositions": {
+        "SleepDep": {
+            "x": 100,
+            "y": 100
+        },
+        "Cortisol": {
+            "x": 200,
+            "y": 200
+        },
+        "ImmuneFunction": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

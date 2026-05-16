@@ -1,47 +1,47 @@
 {
-  "id": 24,
-  "title": "Level 24",
-  "subtitle": "Corr2Cause: Which direction does information flow?",
-  "variables": [
-    "Price",
-    "Demand"
-  ],
-  "order": [
-    "Price",
-    "Demand"
-  ],
-  "observations": [
-    "Higher prices are associated with lower demand."
-  ],
-  "interventionBudget": 2,
-  "scm": {
-    "Price": {
-      "parents": [],
-      "pTrue": 0.5
+    "id": 24,
+    "title": "Level 24",
+    "subtitle": "Corr2Cause: Which direction does information flow?",
+    "variables": [
+        "Price",
+        "Demand"
+    ],
+    "order": [
+        "Price",
+        "Demand"
+    ],
+    "observations": [
+        "Higher prices are associated with lower demand."
+    ],
+    "interventionBudget": 2,
+    "scm": {
+        "Price": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Demand": {
+            "parents": [
+                "Price"
+            ],
+            "pIfAll": 0.15,
+            "pElse": 0.8
+        }
     },
-    "Demand": {
-      "parents": [
-        "Price"
-      ],
-      "pIfAll": 0.15,
-      "pElse": 0.8
+    "groundTruth": [
+        [
+            "Price",
+            "Demand"
+        ]
+    ],
+    "hint": "Does changing demand affect price, or does price affect demand?",
+    "nodePositions": {
+        "Price": {
+            "x": 100,
+            "y": 100
+        },
+        "Demand": {
+            "x": 200,
+            "y": 200
+        }
     }
-  },
-  "groundTruth": [
-    [
-      "Price",
-      "Demand"
-    ]
-  ],
-  "hint": "Does changing demand affect price, or does price affect demand?",
-  "nodePositions": {
-    "Price": {
-      "x": 120,
-      "y": 220
-    },
-    "Demand": {
-      "x": 320,
-      "y": 220
-    }
-  }
 }

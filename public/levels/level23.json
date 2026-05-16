@@ -1,83 +1,83 @@
 {
-  "id": 23,
-  "title": "Level 23",
-  "subtitle": "Corr2Cause: Mediator or confounder?",
-  "variables": [
-    "Policy",
-    "Awareness",
-    "Behavior",
-    "Outcome"
-  ],
-  "order": [
-    "Policy",
-    "Awareness",
-    "Behavior",
-    "Outcome"
-  ],
-  "observations": [
-    "A public health policy improves outcomes.",
-    "The policy increases health awareness.",
-    "Higher awareness leads to better health behaviors."
-  ],
-  "interventionBudget": 6,
-  "scm": {
-    "Policy": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Awareness": {
-      "parents": [
-        "Policy"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.2
-    },
-    "Behavior": {
-      "parents": [
-        "Awareness"
-      ],
-      "pIfAll": 0.8,
-      "pElse": 0.2
-    },
-    "Outcome": {
-      "parents": [
-        "Behavior"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.1
-    }
-  },
-  "groundTruth": [
-    [
-      "Policy",
-      "Awareness"
+    "id": 23,
+    "title": "Level 23",
+    "subtitle": "Corr2Cause: Mediator or confounder?",
+    "variables": [
+        "Policy",
+        "Awareness",
+        "Behavior",
+        "Outcome"
     ],
-    [
-      "Awareness",
-      "Behavior"
+    "order": [
+        "Policy",
+        "Awareness",
+        "Behavior",
+        "Outcome"
     ],
-    [
-      "Behavior",
-      "Outcome"
-    ]
-  ],
-  "hint": "The effect flows through a chain. Is any link direct?",
-  "nodePositions": {
-    "Policy": {
-      "x": 220,
-      "y": 40
+    "observations": [
+        "A public health policy improves outcomes.",
+        "The policy increases health awareness.",
+        "Higher awareness leads to better health behaviors."
+    ],
+    "interventionBudget": 6,
+    "scm": {
+        "Policy": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Awareness": {
+            "parents": [
+                "Policy"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.2
+        },
+        "Behavior": {
+            "parents": [
+                "Awareness"
+            ],
+            "pIfAll": 0.8,
+            "pElse": 0.2
+        },
+        "Outcome": {
+            "parents": [
+                "Behavior"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        }
     },
-    "Awareness": {
-      "x": 220,
-      "y": 170
-    },
-    "Behavior": {
-      "x": 220,
-      "y": 300
-    },
-    "Outcome": {
-      "x": 220,
-      "y": 420
+    "groundTruth": [
+        [
+            "Policy",
+            "Awareness"
+        ],
+        [
+            "Awareness",
+            "Behavior"
+        ],
+        [
+            "Behavior",
+            "Outcome"
+        ]
+    ],
+    "hint": "The effect flows through a chain. Is any link direct?",
+    "nodePositions": {
+        "Policy": {
+            "x": 100,
+            "y": 100
+        },
+        "Awareness": {
+            "x": 200,
+            "y": 200
+        },
+        "Behavior": {
+            "x": 300,
+            "y": 300
+        },
+        "Outcome": {
+            "x": 400,
+            "y": 400
+        }
     }
-  }
 }

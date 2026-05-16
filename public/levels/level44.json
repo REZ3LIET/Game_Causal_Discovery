@@ -1,65 +1,65 @@
 {
-  "id": 44,
-  "title": "Level 44",
-  "subtitle": "Advanced: Hidden fork masquerading as a chain.",
-  "variables": [
-    "U",
-    "X",
-    "Y"
-  ],
-  "order": [
-    "U",
-    "X",
-    "Y"
-  ],
-  "observations": [
-    "X and Y are strongly correlated.",
-    "No direct path from X to Y is obvious."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "U": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "X": {
-      "parents": [
-        "U"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.1
-    },
-    "Y": {
-      "parents": [
-        "U"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.1
-    }
-  },
-  "groundTruth": [
-    [
-      "U",
-      "X"
+    "id": 44,
+    "title": "Level 44",
+    "subtitle": "Advanced: Hidden fork masquerading as a chain.",
+    "variables": [
+        "U",
+        "X",
+        "Y"
     ],
-    [
-      "U",
-      "Y"
-    ]
-  ],
-  "hint": "U is the hidden common cause. Does intervening on X change Y?",
-  "nodePositions": {
-    "U": {
-      "x": 220,
-      "y": 60
+    "order": [
+        "U",
+        "X",
+        "Y"
+    ],
+    "observations": [
+        "X and Y are strongly correlated.",
+        "No direct path from X to Y is obvious."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "U": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "X": {
+            "parents": [
+                "U"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        },
+        "Y": {
+            "parents": [
+                "U"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        }
     },
-    "X": {
-      "x": 80,
-      "y": 270
-    },
-    "Y": {
-      "x": 360,
-      "y": 270
+    "groundTruth": [
+        [
+            "U",
+            "X"
+        ],
+        [
+            "U",
+            "Y"
+        ]
+    ],
+    "hint": "U is the hidden common cause. Does intervening on X change Y?",
+    "nodePositions": {
+        "U": {
+            "x": 100,
+            "y": 100
+        },
+        "X": {
+            "x": 200,
+            "y": 200
+        },
+        "Y": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }

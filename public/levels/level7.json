@@ -1,21 +1,81 @@
 {
-  "id": 7,
-  "title": "Level 7",
-  "subtitle": "CRAB: Growth mediates multiple competing causes.",
-  "variables": ["Fertilizer", "Drought", "Growth", "Fruit"],
-  "order": ["Fertilizer", "Drought", "Growth", "Fruit"],
-  "observations": [
-    "Plants with more growth tend to produce more fruit.",
-    "Drought conditions often reduce plant growth."
-  ],
-  "interventionBudget": 5,
-  "scm": {
-    "Fertilizer": { "parents": [], "pTrue": 0.5 },
-    "Drought": { "parents": [], "pTrue": 0.4 },
-    "Growth": { "parents": ["Fertilizer", "Drought"], "pIfAll": 0.3, "pElse": 0.75, "pIfNone": 0.2 },
-    "Fruit": { "parents": ["Growth"], "pIfAll": 0.88, "pElse": 0.1 }
-  },
-  "groundTruth": [["Fertilizer", "Growth"], ["Drought", "Growth"], ["Growth", "Fruit"]],
-  "hint": "Fruit depends on growth. But growth itself has multiple causes — one helps, one hurts.",
-  "nodePositions": { "Fertilizer": {"x": 80, "y": 60}, "Drought": {"x": 360, "y": 60}, "Growth": {"x": 220, "y": 220}, "Fruit": {"x": 220, "y": 380} }
+    "id": 7,
+    "title": "Level 7",
+    "subtitle": "CRAB: Growth mediates multiple competing causes.",
+    "variables": [
+        "Fertilizer",
+        "Drought",
+        "Growth",
+        "Fruit"
+    ],
+    "order": [
+        "Fertilizer",
+        "Drought",
+        "Growth",
+        "Fruit"
+    ],
+    "observations": [
+        "Plants with more growth tend to produce more fruit.",
+        "Drought conditions often reduce plant growth."
+    ],
+    "interventionBudget": 5,
+    "scm": {
+        "Fertilizer": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Drought": {
+            "parents": [],
+            "pTrue": 0.4
+        },
+        "Growth": {
+            "parents": [
+                "Fertilizer",
+                "Drought"
+            ],
+            "pIfAll": 0.3,
+            "pElse": 0.75,
+            "pIfNone": 0.2
+        },
+        "Fruit": {
+            "parents": [
+                "Growth"
+            ],
+            "pIfAll": 0.88,
+            "pElse": 0.1
+        }
+    },
+    "groundTruth": [
+        [
+            "Fertilizer",
+            "Growth"
+        ],
+        [
+            "Drought",
+            "Growth"
+        ],
+        [
+            "Growth",
+            "Fruit"
+        ]
+    ],
+    "hint": "Fruit depends on growth. But growth itself has multiple causes \u2014 one helps, one hurts.",
+    "nodePositions": {
+        "Fertilizer": {
+            "x": 100,
+            "y": 100
+        },
+        "Drought": {
+            "x": 200,
+            "y": 200
+        },
+        "Growth": {
+            "x": 300,
+            "y": 300
+        },
+        "Fruit": {
+            "x": 400,
+            "y": 400
+        }
+    }
 }

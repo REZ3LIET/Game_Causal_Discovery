@@ -1,77 +1,77 @@
 {
-  "id": 41,
-  "title": "Level 41",
-  "subtitle": "Advanced: Two forks sharing a leaf.",
-  "variables": [
-    "X",
-    "Y",
-    "A",
-    "B"
-  ],
-  "order": [
-    "X",
-    "Y",
-    "A",
-    "B"
-  ],
-  "observations": [],
-  "interventionBudget": 7,
-  "scm": {
-    "X": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "Y": {
-      "parents": [],
-      "pTrue": 0.5
-    },
-    "A": {
-      "parents": [
-        "X"
-      ],
-      "pIfAll": 0.85,
-      "pElse": 0.1
-    },
-    "B": {
-      "parents": [
+    "id": 41,
+    "title": "Level 41",
+    "subtitle": "Advanced: Two forks sharing a leaf.",
+    "variables": [
         "X",
-        "Y"
-      ],
-      "pIfAny": 0.85,
-      "pElse": 0.05
-    }
-  },
-  "groundTruth": [
-    [
-      "X",
-      "A"
+        "Y",
+        "A",
+        "B"
     ],
-    [
-      "X",
-      "B"
+    "order": [
+        "X",
+        "Y",
+        "A",
+        "B"
     ],
-    [
-      "Y",
-      "B"
-    ]
-  ],
-  "hint": null,
-  "nodePositions": {
-    "X": {
-      "x": 80,
-      "y": 80
+    "observations": [],
+    "interventionBudget": 7,
+    "scm": {
+        "X": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "Y": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "A": {
+            "parents": [
+                "X"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        },
+        "B": {
+            "parents": [
+                "X",
+                "Y"
+            ],
+            "pIfAny": 0.85,
+            "pElse": 0.05
+        }
     },
-    "Y": {
-      "x": 360,
-      "y": 80
-    },
-    "A": {
-      "x": 80,
-      "y": 300
-    },
-    "B": {
-      "x": 360,
-      "y": 300
+    "groundTruth": [
+        [
+            "X",
+            "A"
+        ],
+        [
+            "X",
+            "B"
+        ],
+        [
+            "Y",
+            "B"
+        ]
+    ],
+    "hint": null,
+    "nodePositions": {
+        "X": {
+            "x": 100,
+            "y": 100
+        },
+        "Y": {
+            "x": 200,
+            "y": 200
+        },
+        "A": {
+            "x": 300,
+            "y": 300
+        },
+        "B": {
+            "x": 400,
+            "y": 400
+        }
     }
-  }
 }

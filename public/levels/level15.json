@@ -1,71 +1,71 @@
 {
-  "id": 15,
-  "title": "Level 15",
-  "subtitle": "CLADDER: Poverty, nutrition, and child development.",
-  "variables": [
-    "Poverty",
-    "Nutrition",
-    "Development"
-  ],
-  "order": [
-    "Poverty",
-    "Nutrition",
-    "Development"
-  ],
-  "observations": [
-    "Children in poverty show worse developmental outcomes.",
-    "Poor nutrition is common in low-income households."
-  ],
-  "interventionBudget": 4,
-  "scm": {
-    "Poverty": {
-      "parents": [],
-      "pTrue": 0.4
-    },
-    "Nutrition": {
-      "parents": [
-        "Poverty"
-      ],
-      "pIfAll": 0.2,
-      "pElse": 0.8
-    },
-    "Development": {
-      "parents": [
+    "id": 15,
+    "title": "Level 15",
+    "subtitle": "CLADDER: Poverty, nutrition, and child development.",
+    "variables": [
         "Poverty",
-        "Nutrition"
-      ],
-      "pIfAll": 0.5,
-      "pElse": 0.8,
-      "pIfNone": 0.3
-    }
-  },
-  "groundTruth": [
-    [
-      "Poverty",
-      "Nutrition"
+        "Nutrition",
+        "Development"
     ],
-    [
-      "Poverty",
-      "Development"
+    "order": [
+        "Poverty",
+        "Nutrition",
+        "Development"
     ],
-    [
-      "Nutrition",
-      "Development"
-    ]
-  ],
-  "hint": "Poverty harms development directly and through nutrition. Both paths matter.",
-  "nodePositions": {
-    "Poverty": {
-      "x": 80,
-      "y": 60
+    "observations": [
+        "Children in poverty show worse developmental outcomes.",
+        "Poor nutrition is common in low-income households."
+    ],
+    "interventionBudget": 4,
+    "scm": {
+        "Poverty": {
+            "parents": [],
+            "pTrue": 0.4
+        },
+        "Nutrition": {
+            "parents": [
+                "Poverty"
+            ],
+            "pIfAll": 0.2,
+            "pElse": 0.8
+        },
+        "Development": {
+            "parents": [
+                "Poverty",
+                "Nutrition"
+            ],
+            "pIfAll": 0.5,
+            "pElse": 0.8,
+            "pIfNone": 0.3
+        }
     },
-    "Nutrition": {
-      "x": 360,
-      "y": 60
-    },
-    "Development": {
-      "x": 220,
-      "y": 280
+    "groundTruth": [
+        [
+            "Poverty",
+            "Nutrition"
+        ],
+        [
+            "Poverty",
+            "Development"
+        ],
+        [
+            "Nutrition",
+            "Development"
+        ]
+    ],
+    "hint": "Poverty harms development directly and through nutrition. Both paths matter.",
+    "nodePositions": {
+        "Poverty": {
+            "x": 100,
+            "y": 100
+        },
+        "Nutrition": {
+            "x": 200,
+            "y": 200
+        },
+        "Development": {
+            "x": 300,
+            "y": 300
+        }
     }
-  }
 }
