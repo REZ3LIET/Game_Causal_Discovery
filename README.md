@@ -1,6 +1,6 @@
 # Game of Causal Discovery
 
-A causal discovery game where players infer directed causal graphs using observations and do-calculus interventions.
+A causal discovery game where players infer directed causal graphs using observations and do-calculus interventions..
 
 ## Setup
 
