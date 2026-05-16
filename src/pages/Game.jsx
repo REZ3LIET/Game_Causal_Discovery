@@ -60,13 +60,13 @@ export default function Game() {
   const [showHint, setShowHint] = useState(false)
   const [showSolution, setShowSolution] = useState(false)
 
-  // Mobile sidebar open/closed
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  // Mobile sidebar — open by default on mobile, closed on desktop
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth < 768)
 
   useEffect(() => {
     setLoading(true); setFeedback(null); setLastResult(null)
     setInterventionHistory([]); setShowHint(false); setShowSolution(false)
-    setEdges([]); setSubmitLeft(MAX_SUBMITS); setSidebarOpen(false)
+    setEdges([]); setSubmitLeft(MAX_SUBMITS); setSidebarOpen(window.innerWidth < 768)
 
     Promise.all([fetchLevel(id), fetchAllLevels()]).then(([lvl, all]) => {
       if (!lvl) { setLoading(false); return }
@@ -209,7 +209,7 @@ export default function Game() {
         </>
 
         {/* Graph canvas */}
-        <div className="flex-1 relative p-3 min-h-0" style={{ minHeight: 0 }}>
+        <div className="flex-1 relative p-3 min-h-0 pb-20 md:pb-3" style={{ minHeight: 0 }}>
           <div className="w-full h-full" style={{ minHeight: '400px' }}>
             <GraphEditor
               level={level}
@@ -221,8 +221,15 @@ export default function Game() {
             />
           </div>
 
-          {/* Submit row */}
-          <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3">
+          {/* Submit row — fixed on mobile to stay above nav tray, absolute on desktop */}
+          <div className="
+            fixed bottom-0 left-0 right-0 z-30
+            md:absolute md:bottom-6 md:right-6 md:left-auto
+            flex items-center justify-end gap-3
+            md:bg-transparent md:border-0 md:p-0
+            bg-bg/95 border-t border-border px-4 py-3
+            safe-area-inset-bottom
+          " style={{ paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
             <span className={`text-xs font-mono px-2 py-1 rounded-full border ${
               submitLeft <= 1 ? 'text-danger border-danger/40 bg-danger/10'
               : submitLeft <= 2 ? 'text-warn border-warn/40 bg-warn/10'
