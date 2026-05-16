@@ -1,0 +1,32 @@
+{
+  "id": 4,
+  "title": "Level 4",
+  "subtitle": "Two independent causes. One shared effect.",
+  "variables": ["A", "B", "C"],
+  "order": ["A", "B", "C"],
+  "observations": [
+    "A and B appear unrelated to each other.",
+    "C tends to be present when either A or B is present."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "A": { "parents": [], "pTrue": 0.5 },
+    "B": { "parents": [], "pTrue": 0.5 },
+    "C": {
+      "parents": ["A", "B"],
+      "condition": "A === 1 || B === 1",
+      "pIfTrue": 0.9,
+      "pElse": 0.05
+    }
+  },
+  "groundTruth": [
+    ["A", "C"],
+    ["B", "C"]
+  ],
+  "hint": "What happens to C when you force A on or off? What about B? Do A and B influence each other?",
+  "nodePositions": {
+    "A": { "x": 80, "y": 80 },
+    "B": { "x": 360, "y": 80 },
+    "C": { "x": 220, "y": 260 }
+  }
+}

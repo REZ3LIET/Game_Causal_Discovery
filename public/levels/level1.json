@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "title": "Level 1",
+  "subtitle": "Two variables. One cause.",
+  "variables": ["A", "B"],
+  "order": ["A", "B"],
+  "observations": [
+    "When A is present, B tends to be present.",
+    "When A is absent, B is usually absent too."
+  ],
+  "interventionBudget": 3,
+  "scm": {
+    "A": { "parents": [], "pTrue": 0.5 },
+    "B": { "parents": ["A"], "pIfAll": 0.85, "pElse": 0.1 }
+  },
+  "groundTruth": [["A", "B"]],
+  "hint": "Try intervening on A and watch what happens to B. Then try the other direction.",
+  "nodePositions": {
+    "A": { "x": 220, "y": 80 },
+    "B": { "x": 220, "y": 240 }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": 2,
+  "title": "Level 2",
+  "subtitle": "Three variables. Follow the chain.",
+  "variables": ["A", "B", "C"],
+  "order": ["A", "B", "C"],
+  "observations": [
+    "A and B tend to co-occur.",
+    "B and C tend to co-occur.",
+    "A and C also appear correlated."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "A": { "parents": [], "pTrue": 0.5 },
+    "B": { "parents": ["A"], "pIfAll": 0.8, "pElse": 0.15 },
+    "C": { "parents": ["B"], "pIfAll": 0.85, "pElse": 0.1 }
+  },
+  "groundTruth": [
+    ["A", "B"],
+    ["B", "C"]
+  ],
+  "hint": "A and C are correlated — but is it direct? Try fixing B and see if A still affects C.",
+  "nodePositions": {
+    "A": { "x": 220, "y": 60 },
+    "B": { "x": 220, "y": 200 },
+    "C": { "x": 220, "y": 340 }
+  }
+}
