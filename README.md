@@ -57,39 +57,60 @@ src/
 5. Register in `src/levels/index.js`
 
 **Option B: Write manually**
-```js
-import { bernoulli } from '../engine/scm'
-
-export default {
-  id: 6,
-  title: 'Level 6',
-  subtitle: '...',
-  variables: ['A', 'B', 'C'],
-  order: ['A', 'B', 'C'],          // topological order!
-  observations: ['A and B co-occur.'],
-  interventionBudget: 4,
-  scm: {
-    A: () => bernoulli(0.5),
-    B: ({ A }) => bernoulli(A === 1 ? 0.85 : 0.1),
-    C: ({ B }) => bernoulli(B === 1 ? 0.8 : 0.2),
-  },
-  groundTruth: [['A', 'B'], ['B', 'C']],
-  hint: null,
-  nodePositions: {
-    A: { x: 220, y: 60 },
-    B: { x: 220, y: 200 },
-    C: { x: 220, y: 340 },
-  },
+```json
+{
+    "id": 1,
+    "title": "Level 1",
+    "subtitle": "Introduction: Two variables. One cause.",
+    "variables": [
+        "A",
+        "B"
+    ],
+    "order": [
+        "A",
+        "B"
+    ],
+    "observations": [
+        "When A is present, B tends to be present.",
+        "When A is absent, B is usually absent too."
+    ],
+    "interventionBudget": 3,
+    "scm": {
+        "A": {
+            "parents": [],
+            "pTrue": 0.5
+        },
+        "B": {
+            "parents": [
+                "A"
+            ],
+            "pIfAll": 0.85,
+            "pElse": 0.1
+        }
+    },
+    "groundTruth": [
+        [
+            "A",
+            "B"
+        ]
+    ],
+    "hint": "Try intervening on A and watch what happens to B. Then try the other direction.",
+    "nodePositions": {
+        "A": {
+            "x": 100,
+            "y": 100
+        },
+        "B": {
+            "x": 200,
+            "y": 200
+        }
+    }
 }
 ```
 
 ## SCM notes
 
 - Variables are binary (0 or 1)
-- `order` must be topological (parents before children)
-- `bernoulli(p)` returns 1 with probability p
-- Intervention engine samples 300 times to estimate effect direction
-- Effect threshold: |Δ| < 0.05 = "unchanged"
 
 ## Game rules
 
