@@ -6,15 +6,13 @@
  *   { "parents": ["A"], "pIfAll": 0.85, "pElse": 0.1 }      — all parents must be 1
  *   { "parents": ["A","B"], "pIfAny": 0.9, "pElse": 0.05 }  — any parent being 1 suffices
  *   { "parents": ["A","B"], "pIfAll": 0.8, "pElse": 0.1 }   — all parents must be 1 (AND gate)
+ *   { "parents": ["A","B"], "pIfAll": 0.8, "pElse": 0.3, "pIfNone": 0.05 } — three-way
  */
 
 function bernoulli(p) {
   return Math.random() < p ? 1 : 0
 }
 
-/**
- * Convert a JSON SCM definition into a map of callable functions.
- */
 export function interpretSCM(jsonScm) {
   const fns = {}
   for (const [varName, def] of Object.entries(jsonScm)) {
@@ -28,7 +26,6 @@ export function interpretSCM(jsonScm) {
       if (def.pIfAny !== undefined) {
         return bernoulli(anyOne ? def.pIfAny : def.pElse)
       }
-      // pIfNone: three-way — all parents 1, some parents 1, no parents 1
       if (def.pIfNone !== undefined) {
         if (allOne) return bernoulli(def.pIfAll)
         if (anyOne) return bernoulli(def.pElse)
@@ -40,9 +37,6 @@ export function interpretSCM(jsonScm) {
   return fns
 }
 
-/**
- * Evaluate the full SCM with optional do-interventions.
- */
 export function evaluate(scmFns, order, doVals = {}) {
   const result = {}
   for (const v of order) {
@@ -53,9 +47,10 @@ export function evaluate(scmFns, order, doVals = {}) {
 
 /**
  * Run a do(variable=value) intervention.
- * Returns { varName: 'increased' | 'decreased' | 'unchanged' } for all other vars.
+ * Uses large sample + wide threshold so results are deterministic across repeated calls.
+ * Returns { varName: 'increased' | 'decreased' | 'unchanged' }
  */
-export function intervene(scmFns, order, variable, value, sampleSize = 300) {
+export function intervene(scmFns, order, variable, value, sampleSize = 2000) {
   const baseline = {}
   const intervened = {}
   for (const v of order) { baseline[v] = 0; intervened[v] = 0 }
@@ -73,14 +68,12 @@ export function intervene(scmFns, order, variable, value, sampleSize = 300) {
   for (const v of order) {
     if (v === variable) continue
     const delta = (intervened[v] - baseline[v]) / sampleSize
-    results[v] = Math.abs(delta) < 0.05 ? 'unchanged' : delta > 0 ? 'increased' : 'decreased'
+    // Wider threshold (0.1) ensures stable classification across repeated calls
+    results[v] = Math.abs(delta) < 0.1 ? 'unchanged' : delta > 0 ? 'increased' : 'decreased'
   }
   return results
 }
 
-/**
- * Check submitted edges against ground truth.
- */
 export function checkAnswer(submitted, groundTruth) {
   const norm = (edges) => new Set(edges.map(([a, b]) => `${a}->${b}`))
   const gt = norm(groundTruth)

@@ -6,14 +6,26 @@ export default function CausalNode({ id, data }) {
   const isSource = selectState === 'source'
   const isEligible = selectState === 'target-eligible'
 
+  // Make node oval based on label length
+  const len = (label || '').length
+  const isLong = len > 3
+  const isVeryLong = len > 6
+
+  const shapeClass = isVeryLong
+    ? 'rounded-2xl px-4 py-2 min-w-[90px]'
+    : isLong
+    ? 'rounded-2xl px-3 py-2 min-w-[72px]'
+    : 'rounded-full w-14 h-14'
+
   return (
     <div
       onClick={(e) => { e.stopPropagation(); onNodeClick(id) }}
       className={`
         relative flex items-center justify-center
-        w-14 h-14 rounded-full
-        font-mono font-medium text-lg
-        border-2 transition-all duration-150 select-none cursor-pointer
+        ${shapeClass}
+        font-mono font-medium border-2
+        transition-all duration-150 select-none cursor-pointer
+        ${isVeryLong ? 'text-xs' : isLong ? 'text-sm' : 'text-lg'}
         ${isSource
           ? 'bg-accent/30 border-accent text-accent shadow-[0_0_20px_4px_rgba(124,106,247,0.4)] scale-110'
           : isEligible

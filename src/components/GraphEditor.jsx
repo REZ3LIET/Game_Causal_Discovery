@@ -4,6 +4,7 @@ import {
   Background,
   Controls,
   ReactFlowProvider,
+  useReactFlow,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import CausalNode from './CausalNode'
@@ -102,6 +103,14 @@ function EdgesOverlay({ edges, nodes, onDeleteEdge }) {
 
 function Inner({ level, interventions, nodes, edges, setNodes, setEdges }) {
   const [sourceNode, setSourceNode] = useState(null)
+  const { fitView } = useReactFlow()
+
+  // Re-fit after nodes load (fixes delayed appearance)
+  useEffect(() => {
+    if (nodes.length === 0) return
+    const t = setTimeout(() => fitView({ padding: 0.4, duration: 200 }), 50)
+    return () => clearTimeout(t)
+  }, [nodes.length, fitView])
 
   const handleNodeClick = useCallback((clickedId) => {
     if (sourceNode === null) {
@@ -157,8 +166,6 @@ function Inner({ level, interventions, nodes, edges, setNodes, setEdges }) {
         nodeTypes={nodeTypes}
         nodesDraggable={true}
         nodesConnectable={false}
-        fitView
-        fitViewOptions={{ padding: 0.4 }}
         deleteKeyCode={null}
         proOptions={{ hideAttribution: true }}
       >
