@@ -28,6 +28,12 @@ export function interpretSCM(jsonScm) {
       if (def.pIfAny !== undefined) {
         return bernoulli(anyOne ? def.pIfAny : def.pElse)
       }
+      // pIfNone: three-way — all parents 1, some parents 1, no parents 1
+      if (def.pIfNone !== undefined) {
+        if (allOne) return bernoulli(def.pIfAll)
+        if (anyOne) return bernoulli(def.pElse)
+        return bernoulli(def.pIfNone)
+      }
       return bernoulli(allOne ? def.pIfAll : def.pElse)
     }
   }

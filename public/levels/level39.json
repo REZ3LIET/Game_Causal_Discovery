@@ -1,0 +1,47 @@
+{
+  "id": 39,
+  "title": "Level 39",
+  "subtitle": "Tubingen: Police presence and crime \u2014 chicken or egg?",
+  "variables": [
+    "CrimeRate",
+    "PoliceDensity"
+  ],
+  "order": [
+    "CrimeRate",
+    "PoliceDensity"
+  ],
+  "observations": [
+    "Areas with more crime tend to have more police officers deployed."
+  ],
+  "interventionBudget": 2,
+  "scm": {
+    "CrimeRate": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "PoliceDensity": {
+      "parents": [
+        "CrimeRate"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.15
+    }
+  },
+  "groundTruth": [
+    [
+      "CrimeRate",
+      "PoliceDensity"
+    ]
+  ],
+  "hint": "Police are deployed in response to crime \u2014 not the other way in this model.",
+  "nodePositions": {
+    "CrimeRate": {
+      "x": 100,
+      "y": 220
+    },
+    "PoliceDensity": {
+      "x": 340,
+      "y": 220
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": 18,
+  "title": "Level 18",
+  "subtitle": "CLADDER: Shoe size and reading ability in children.",
+  "variables": [
+    "Age",
+    "ShoeSize",
+    "Reading"
+  ],
+  "order": [
+    "Age",
+    "ShoeSize",
+    "Reading"
+  ],
+  "observations": [
+    "Children with larger shoe sizes tend to read better.",
+    "Shoe size and reading both increase as children get older."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "Age": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "ShoeSize": {
+      "parents": [
+        "Age"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.15
+    },
+    "Reading": {
+      "parents": [
+        "Age"
+      ],
+      "pIfAll": 0.9,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "Age",
+      "ShoeSize"
+    ],
+    [
+      "Age",
+      "Reading"
+    ]
+  ],
+  "hint": "Intervene directly on shoe size. Does reading ability change?",
+  "nodePositions": {
+    "Age": {
+      "x": 220,
+      "y": 60
+    },
+    "ShoeSize": {
+      "x": 80,
+      "y": 240
+    },
+    "Reading": {
+      "x": 360,
+      "y": 240
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": 11,
+  "title": "Level 11",
+  "subtitle": "CLADDER: Ice cream sales and drowning \u2014 a classic trap.",
+  "variables": [
+    "Summer",
+    "IceCream",
+    "Drowning"
+  ],
+  "order": [
+    "Summer",
+    "IceCream",
+    "Drowning"
+  ],
+  "observations": [
+    "Ice cream sales and drowning incidents rise together.",
+    "Both peak during the same months of the year."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "Summer": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "IceCream": {
+      "parents": [
+        "Summer"
+      ],
+      "pIfAll": 0.9,
+      "pElse": 0.1
+    },
+    "Drowning": {
+      "parents": [
+        "Summer"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "Summer",
+      "IceCream"
+    ],
+    [
+      "Summer",
+      "Drowning"
+    ]
+  ],
+  "hint": "Intervene on ice cream directly. Does drowning change?",
+  "nodePositions": {
+    "Summer": {
+      "x": 220,
+      "y": 60
+    },
+    "IceCream": {
+      "x": 80,
+      "y": 240
+    },
+    "Drowning": {
+      "x": 360,
+      "y": 240
+    }
+  }
+}

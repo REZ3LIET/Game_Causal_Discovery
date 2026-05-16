@@ -1,0 +1,81 @@
+{
+  "id": 28,
+  "title": "Level 28",
+  "subtitle": "Corr2Cause: Two colliders, one fork.",
+  "variables": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "order": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "observations": [
+    "A and C are correlated.",
+    "B appears independent of A and C marginally.",
+    "D is correlated with A and B."
+  ],
+  "interventionBudget": 6,
+  "scm": {
+    "A": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "B": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "C": {
+      "parents": [
+        "A"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    },
+    "D": {
+      "parents": [
+        "A",
+        "B"
+      ],
+      "pIfAny": 0.85,
+      "pElse": 0.05
+    }
+  },
+  "groundTruth": [
+    [
+      "A",
+      "C"
+    ],
+    [
+      "A",
+      "D"
+    ],
+    [
+      "B",
+      "D"
+    ]
+  ],
+  "hint": "A is a common cause of C and D. B is an independent cause of D.",
+  "nodePositions": {
+    "A": {
+      "x": 80,
+      "y": 80
+    },
+    "B": {
+      "x": 360,
+      "y": 80
+    },
+    "C": {
+      "x": 80,
+      "y": 300
+    },
+    "D": {
+      "x": 360,
+      "y": 300
+    }
+  }
+}

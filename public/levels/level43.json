@@ -1,0 +1,75 @@
+{
+  "id": 43,
+  "title": "Level 43",
+  "subtitle": "Advanced: Compete causes, one effect.",
+  "variables": [
+    "Stress",
+    "Diet",
+    "Genetics",
+    "BloodPressure"
+  ],
+  "order": [
+    "Stress",
+    "Diet",
+    "Genetics",
+    "BloodPressure"
+  ],
+  "observations": [],
+  "interventionBudget": 7,
+  "scm": {
+    "Stress": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Diet": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Genetics": {
+      "parents": [],
+      "pTrue": 0.3
+    },
+    "BloodPressure": {
+      "parents": [
+        "Stress",
+        "Diet",
+        "Genetics"
+      ],
+      "pIfAny": 0.85,
+      "pElse": 0.05
+    }
+  },
+  "groundTruth": [
+    [
+      "Stress",
+      "BloodPressure"
+    ],
+    [
+      "Diet",
+      "BloodPressure"
+    ],
+    [
+      "Genetics",
+      "BloodPressure"
+    ]
+  ],
+  "hint": null,
+  "nodePositions": {
+    "Stress": {
+      "x": 60,
+      "y": 60
+    },
+    "Diet": {
+      "x": 220,
+      "y": 60
+    },
+    "Genetics": {
+      "x": 380,
+      "y": 60
+    },
+    "BloodPressure": {
+      "x": 220,
+      "y": 300
+    }
+  }
+}

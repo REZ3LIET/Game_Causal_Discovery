@@ -1,0 +1,71 @@
+{
+  "id": 48,
+  "title": "Level 48",
+  "subtitle": "Real world: Minimum wage, employment, and poverty.",
+  "variables": [
+    "MinWage",
+    "Employment",
+    "Poverty"
+  ],
+  "order": [
+    "MinWage",
+    "Employment",
+    "Poverty"
+  ],
+  "observations": [
+    "Higher minimum wage is associated with lower poverty.",
+    "Some regions show employment drops after minimum wage increases."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "MinWage": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Employment": {
+      "parents": [
+        "MinWage"
+      ],
+      "pIfAll": 0.4,
+      "pElse": 0.65
+    },
+    "Poverty": {
+      "parents": [
+        "MinWage",
+        "Employment"
+      ],
+      "pIfAll": 0.2,
+      "pElse": 0.7,
+      "pIfNone": 0.8
+    }
+  },
+  "groundTruth": [
+    [
+      "MinWage",
+      "Employment"
+    ],
+    [
+      "MinWage",
+      "Poverty"
+    ],
+    [
+      "Employment",
+      "Poverty"
+    ]
+  ],
+  "hint": "Minimum wage reduces poverty but also affects employment. Both affect poverty.",
+  "nodePositions": {
+    "MinWage": {
+      "x": 80,
+      "y": 60
+    },
+    "Employment": {
+      "x": 360,
+      "y": 60
+    },
+    "Poverty": {
+      "x": 220,
+      "y": 280
+    }
+  }
+}

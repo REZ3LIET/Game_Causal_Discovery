@@ -1,0 +1,71 @@
+{
+  "id": 38,
+  "title": "Level 38",
+  "subtitle": "Tubingen: Screen time, sedentary lifestyle, and obesity.",
+  "variables": [
+    "ScreenTime",
+    "SedentaryLife",
+    "Obesity"
+  ],
+  "order": [
+    "ScreenTime",
+    "SedentaryLife",
+    "Obesity"
+  ],
+  "observations": [
+    "More screen time is associated with a more sedentary lifestyle.",
+    "Sedentary behavior correlates with higher obesity rates.",
+    "Screen time also correlates directly with obesity."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "ScreenTime": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "SedentaryLife": {
+      "parents": [
+        "ScreenTime"
+      ],
+      "pIfAll": 0.82,
+      "pElse": 0.18
+    },
+    "Obesity": {
+      "parents": [
+        "ScreenTime",
+        "SedentaryLife"
+      ],
+      "pIfAny": 0.8,
+      "pElse": 0.08
+    }
+  },
+  "groundTruth": [
+    [
+      "ScreenTime",
+      "SedentaryLife"
+    ],
+    [
+      "ScreenTime",
+      "Obesity"
+    ],
+    [
+      "SedentaryLife",
+      "Obesity"
+    ]
+  ],
+  "hint": "Screen time has both a direct path to obesity and an indirect one through sedentary lifestyle.",
+  "nodePositions": {
+    "ScreenTime": {
+      "x": 80,
+      "y": 60
+    },
+    "SedentaryLife": {
+      "x": 360,
+      "y": 60
+    },
+    "Obesity": {
+      "x": 220,
+      "y": 280
+    }
+  }
+}

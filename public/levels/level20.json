@@ -1,0 +1,82 @@
+{
+  "id": 20,
+  "title": "Level 20",
+  "subtitle": "Corr2Cause: Four variables, one hidden common cause.",
+  "variables": [
+    "X",
+    "A",
+    "B",
+    "C"
+  ],
+  "order": [
+    "X",
+    "A",
+    "B",
+    "C"
+  ],
+  "observations": [
+    "A, B, and C are all pairwise correlated.",
+    "No direct relationships between A, B, C are obvious."
+  ],
+  "interventionBudget": 6,
+  "scm": {
+    "X": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "A": {
+      "parents": [
+        "X"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    },
+    "B": {
+      "parents": [
+        "X"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.15
+    },
+    "C": {
+      "parents": [
+        "X"
+      ],
+      "pIfAll": 0.75,
+      "pElse": 0.2
+    }
+  },
+  "groundTruth": [
+    [
+      "X",
+      "A"
+    ],
+    [
+      "X",
+      "B"
+    ],
+    [
+      "X",
+      "C"
+    ]
+  ],
+  "hint": "All three outcomes correlate. Intervene on each \u2014 do they affect each other?",
+  "nodePositions": {
+    "X": {
+      "x": 220,
+      "y": 60
+    },
+    "A": {
+      "x": 60,
+      "y": 270
+    },
+    "B": {
+      "x": 220,
+      "y": 270
+    },
+    "C": {
+      "x": 380,
+      "y": 270
+    }
+  }
+}

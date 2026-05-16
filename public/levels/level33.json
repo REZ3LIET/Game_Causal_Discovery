@@ -1,0 +1,47 @@
+{
+  "id": 33,
+  "title": "Level 33",
+  "subtitle": "Tubingen: Noise and hearing loss.",
+  "variables": [
+    "NoiseExposure",
+    "HearingLoss"
+  ],
+  "order": [
+    "NoiseExposure",
+    "HearingLoss"
+  ],
+  "observations": [
+    "Long-term noise exposure is associated with hearing loss."
+  ],
+  "interventionBudget": 2,
+  "scm": {
+    "NoiseExposure": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "HearingLoss": {
+      "parents": [
+        "NoiseExposure"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "NoiseExposure",
+      "HearingLoss"
+    ]
+  ],
+  "hint": "Noise damages hearing. Hearing loss does not generate noise.",
+  "nodePositions": {
+    "NoiseExposure": {
+      "x": 100,
+      "y": 220
+    },
+    "HearingLoss": {
+      "x": 340,
+      "y": 220
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": 37,
+  "title": "Level 37",
+  "subtitle": "Tubingen: Pollution and respiratory disease.",
+  "variables": [
+    "Industry",
+    "Pollution",
+    "RespiratoryDisease"
+  ],
+  "order": [
+    "Industry",
+    "Pollution",
+    "RespiratoryDisease"
+  ],
+  "observations": [
+    "Industrial areas have higher pollution.",
+    "Pollution correlates with respiratory disease rates."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "Industry": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Pollution": {
+      "parents": [
+        "Industry"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    },
+    "RespiratoryDisease": {
+      "parents": [
+        "Pollution"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "Industry",
+      "Pollution"
+    ],
+    [
+      "Pollution",
+      "RespiratoryDisease"
+    ]
+  ],
+  "hint": "Does industry directly cause disease, or only through pollution?",
+  "nodePositions": {
+    "Industry": {
+      "x": 220,
+      "y": 60
+    },
+    "Pollution": {
+      "x": 220,
+      "y": 220
+    },
+    "RespiratoryDisease": {
+      "x": 220,
+      "y": 380
+    }
+  }
+}

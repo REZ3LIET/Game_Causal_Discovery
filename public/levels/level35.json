@@ -1,0 +1,47 @@
+{
+  "id": 35,
+  "title": "Level 35",
+  "subtitle": "Tubingen: Temperature and CO2 \u2014 direction matters.",
+  "variables": [
+    "CO2",
+    "GlobalTemp"
+  ],
+  "order": [
+    "CO2",
+    "GlobalTemp"
+  ],
+  "observations": [
+    "Atmospheric CO2 levels correlate strongly with global temperatures."
+  ],
+  "interventionBudget": 2,
+  "scm": {
+    "CO2": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "GlobalTemp": {
+      "parents": [
+        "CO2"
+      ],
+      "pIfAll": 0.88,
+      "pElse": 0.2
+    }
+  },
+  "groundTruth": [
+    [
+      "CO2",
+      "GlobalTemp"
+    ]
+  ],
+  "hint": "Which direction does the primary causal influence flow in the short run?",
+  "nodePositions": {
+    "CO2": {
+      "x": 100,
+      "y": 220
+    },
+    "GlobalTemp": {
+      "x": 340,
+      "y": 220
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": 50,
+  "title": "Level 50",
+  "subtitle": "Final: Untangle a 5-variable web. No observations. No hints.",
+  "variables": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "observations": [],
+  "interventionBudget": 10,
+  "scm": {
+    "A": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "B": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "C": {
+      "parents": [
+        "A",
+        "B"
+      ],
+      "pIfAny": 0.85,
+      "pElse": 0.05
+    },
+    "D": {
+      "parents": [
+        "A"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.15
+    },
+    "E": {
+      "parents": [
+        "C",
+        "D"
+      ],
+      "pIfAny": 0.88,
+      "pElse": 0.05
+    }
+  },
+  "groundTruth": [
+    [
+      "A",
+      "C"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "A",
+      "D"
+    ],
+    [
+      "C",
+      "E"
+    ],
+    [
+      "D",
+      "E"
+    ]
+  ],
+  "hint": null,
+  "nodePositions": {
+    "A": {
+      "x": 80,
+      "y": 80
+    },
+    "B": {
+      "x": 360,
+      "y": 80
+    },
+    "C": {
+      "x": 220,
+      "y": 210
+    },
+    "D": {
+      "x": 80,
+      "y": 330
+    },
+    "E": {
+      "x": 220,
+      "y": 430
+    }
+  }
+}

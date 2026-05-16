@@ -1,0 +1,83 @@
+{
+  "id": 27,
+  "title": "Level 27",
+  "subtitle": "Corr2Cause: Long causal chain.",
+  "variables": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "order": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "observations": [
+    "A correlates with B, C, and D.",
+    "B correlates with C and D.",
+    "Conditioning on B makes A independent of C."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "A": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "B": {
+      "parents": [
+        "A"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    },
+    "C": {
+      "parents": [
+        "B"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    },
+    "D": {
+      "parents": [
+        "C"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ],
+  "hint": "All four are correlated. Which connections are direct?",
+  "nodePositions": {
+    "A": {
+      "x": 60,
+      "y": 220
+    },
+    "B": {
+      "x": 180,
+      "y": 220
+    },
+    "C": {
+      "x": 300,
+      "y": 220
+    },
+    "D": {
+      "x": 420,
+      "y": 220
+    }
+  }
+}

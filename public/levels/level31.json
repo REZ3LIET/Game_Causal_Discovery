@@ -1,0 +1,47 @@
+{
+  "id": 31,
+  "title": "Level 31",
+  "subtitle": "Tubingen: Sunlight and vitamin D.",
+  "variables": [
+    "Sunlight",
+    "VitaminD"
+  ],
+  "order": [
+    "Sunlight",
+    "VitaminD"
+  ],
+  "observations": [
+    "Sunlight exposure correlates with higher vitamin D levels."
+  ],
+  "interventionBudget": 2,
+  "scm": {
+    "Sunlight": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "VitaminD": {
+      "parents": [
+        "Sunlight"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.15
+    }
+  },
+  "groundTruth": [
+    [
+      "Sunlight",
+      "VitaminD"
+    ]
+  ],
+  "hint": "Sunlight triggers vitamin D synthesis. Can vitamin D increase sunlight?",
+  "nodePositions": {
+    "Sunlight": {
+      "x": 100,
+      "y": 220
+    },
+    "VitaminD": {
+      "x": 340,
+      "y": 220
+    }
+  }
+}

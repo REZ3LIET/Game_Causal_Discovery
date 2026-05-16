@@ -1,0 +1,72 @@
+{
+  "id": 25,
+  "title": "Level 25",
+  "subtitle": "Corr2Cause: Bidirectional appearance, unidirectional truth.",
+  "variables": [
+    "Stress",
+    "Sleep",
+    "Performance"
+  ],
+  "order": [
+    "Stress",
+    "Sleep",
+    "Performance"
+  ],
+  "observations": [
+    "High stress is associated with poor sleep.",
+    "Poor sleep is associated with worse work performance.",
+    "High stress also directly affects performance."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "Stress": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Sleep": {
+      "parents": [
+        "Stress"
+      ],
+      "pIfAll": 0.15,
+      "pElse": 0.8
+    },
+    "Performance": {
+      "parents": [
+        "Stress",
+        "Sleep"
+      ],
+      "pIfAll": 0.7,
+      "pElse": 0.3,
+      "pIfNone": 0.85
+    }
+  },
+  "groundTruth": [
+    [
+      "Stress",
+      "Sleep"
+    ],
+    [
+      "Stress",
+      "Performance"
+    ],
+    [
+      "Sleep",
+      "Performance"
+    ]
+  ],
+  "hint": "Stress has both a direct path to performance and an indirect one through sleep.",
+  "nodePositions": {
+    "Stress": {
+      "x": 80,
+      "y": 60
+    },
+    "Sleep": {
+      "x": 360,
+      "y": 60
+    },
+    "Performance": {
+      "x": 220,
+      "y": 280
+    }
+  }
+}

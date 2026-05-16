@@ -1,0 +1,21 @@
+{
+  "id": 8,
+  "title": "Level 8",
+  "subtitle": "Corr2Cause: Correlations alone can be misleading.",
+  "variables": ["A", "B", "C"],
+  "order": ["A", "B", "C"],
+  "observations": [
+    "A correlates with B.",
+    "B correlates with C.",
+    "A becomes independent of C when conditioning on B."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "A": { "parents": [], "pTrue": 0.5 },
+    "B": { "parents": ["A"], "pIfAll": 0.82, "pElse": 0.2 },
+    "C": { "parents": ["B"], "pIfAll": 0.86, "pElse": 0.1 }
+  },
+  "groundTruth": [["A", "B"], ["B", "C"]],
+  "hint": "Does A really affect C directly, or is something mediating the relationship?",
+  "nodePositions": { "A": {"x": 220, "y": 60}, "B": {"x": 220, "y": 220}, "C": {"x": 220, "y": 380} }
+}

@@ -1,0 +1,66 @@
+{
+  "id": 29,
+  "title": "Level 29",
+  "subtitle": "Corr2Cause: Apparent chain is actually a fork.",
+  "variables": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "order": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "observations": [
+    "X and Y are correlated.",
+    "Y and Z are correlated.",
+    "X and Z are correlated even after observing Y."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "X": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Y": {
+      "parents": [
+        "X"
+      ],
+      "pIfAll": 0.8,
+      "pElse": 0.2
+    },
+    "Z": {
+      "parents": [
+        "X"
+      ],
+      "pIfAll": 0.85,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "X",
+      "Y"
+    ],
+    [
+      "X",
+      "Z"
+    ]
+  ],
+  "hint": "Y and Z appear linked. But intervening on Y \u2014 does Z change?",
+  "nodePositions": {
+    "X": {
+      "x": 220,
+      "y": 60
+    },
+    "Y": {
+      "x": 80,
+      "y": 270
+    },
+    "Z": {
+      "x": 360,
+      "y": 270
+    }
+  }
+}

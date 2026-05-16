@@ -1,0 +1,16 @@
+{
+  "id": 9,
+  "title": "Level 9",
+  "subtitle": "Tubingen: Infer the causal direction between two variables.",
+  "variables": ["Altitude", "Temperature"],
+  "order": ["Altitude", "Temperature"],
+  "observations": ["Higher altitude locations tend to have lower temperatures."],
+  "interventionBudget": 2,
+  "scm": {
+    "Altitude": { "parents": [], "pTrue": 0.5 },
+    "Temperature": { "parents": ["Altitude"], "pIfAll": 0.15, "pElse": 0.85 }
+  },
+  "groundTruth": [["Altitude", "Temperature"]],
+  "hint": "Changing altitude affects temperature. Does changing temperature affect altitude?",
+  "nodePositions": { "Altitude": {"x": 120, "y": 220}, "Temperature": {"x": 320, "y": 220} }
+}

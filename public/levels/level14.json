@@ -1,0 +1,70 @@
+{
+  "id": 14,
+  "title": "Level 14",
+  "subtitle": "CLADDER: Aspirin, blood pressure, and heart attack.",
+  "variables": [
+    "Aspirin",
+    "BloodPressure",
+    "HeartAttack"
+  ],
+  "order": [
+    "Aspirin",
+    "BloodPressure",
+    "HeartAttack"
+  ],
+  "observations": [
+    "Aspirin use is associated with lower heart attack rates.",
+    "Aspirin slightly reduces blood pressure on average."
+  ],
+  "interventionBudget": 4,
+  "scm": {
+    "Aspirin": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "BloodPressure": {
+      "parents": [
+        "Aspirin"
+      ],
+      "pIfAll": 0.3,
+      "pElse": 0.7
+    },
+    "HeartAttack": {
+      "parents": [
+        "Aspirin",
+        "BloodPressure"
+      ],
+      "pIfAll": 0.05,
+      "pElse": 0.6
+    }
+  },
+  "groundTruth": [
+    [
+      "Aspirin",
+      "BloodPressure"
+    ],
+    [
+      "Aspirin",
+      "HeartAttack"
+    ],
+    [
+      "BloodPressure",
+      "HeartAttack"
+    ]
+  ],
+  "hint": "Aspirin has both a direct effect and an indirect one through blood pressure.",
+  "nodePositions": {
+    "Aspirin": {
+      "x": 80,
+      "y": 60
+    },
+    "BloodPressure": {
+      "x": 360,
+      "y": 60
+    },
+    "HeartAttack": {
+      "x": 220,
+      "y": 280
+    }
+  }
+}

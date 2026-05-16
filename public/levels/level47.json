@@ -1,0 +1,70 @@
+{
+  "id": 47,
+  "title": "Level 47",
+  "subtitle": "Real world: Social media, loneliness, and depression.",
+  "variables": [
+    "SocialMedia",
+    "Loneliness",
+    "Depression"
+  ],
+  "order": [
+    "SocialMedia",
+    "Loneliness",
+    "Depression"
+  ],
+  "observations": [
+    "High social media use correlates with depression.",
+    "Heavy social media users often report more loneliness."
+  ],
+  "interventionBudget": 5,
+  "scm": {
+    "SocialMedia": {
+      "parents": [],
+      "pTrue": 0.5
+    },
+    "Loneliness": {
+      "parents": [
+        "SocialMedia"
+      ],
+      "pIfAll": 0.75,
+      "pElse": 0.25
+    },
+    "Depression": {
+      "parents": [
+        "SocialMedia",
+        "Loneliness"
+      ],
+      "pIfAny": 0.8,
+      "pElse": 0.1
+    }
+  },
+  "groundTruth": [
+    [
+      "SocialMedia",
+      "Loneliness"
+    ],
+    [
+      "SocialMedia",
+      "Depression"
+    ],
+    [
+      "Loneliness",
+      "Depression"
+    ]
+  ],
+  "hint": "Social media has both direct and indirect effects through loneliness.",
+  "nodePositions": {
+    "SocialMedia": {
+      "x": 80,
+      "y": 60
+    },
+    "Loneliness": {
+      "x": 360,
+      "y": 60
+    },
+    "Depression": {
+      "x": 220,
+      "y": 280
+    }
+  }
+}
