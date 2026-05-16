@@ -1,4 +1,6 @@
-# Causal — discover the graph
+# Game of Causal Discovery
+
+[Play](https://causaldiscoverygame.vercel.app/)
 
 A causal discovery game where players infer directed causal graphs using observations and do-calculus interventions.
 
