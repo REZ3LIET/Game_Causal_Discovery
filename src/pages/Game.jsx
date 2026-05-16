@@ -195,13 +195,13 @@ export default function Game() {
             {sidebar}
           </aside>
 
-          {/* Mobile drawer */}
+          {/* Mobile drawer — fixed to viewport so overflow-hidden doesn't clip it */}
           {sidebarOpen && (
-            <div className="md:hidden absolute inset-0 z-40 flex">
+            <div className="md:hidden fixed inset-0 z-50 flex">
               {/* Backdrop */}
               <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" onClick={() => setSidebarOpen(false)} />
               {/* Panel */}
-              <aside className="relative z-50 w-80 max-w-[90vw] bg-bg border-r border-border p-3 overflow-y-auto h-full">
+              <aside className="relative z-50 w-80 max-w-[90vw] bg-bg border-r border-border p-3 overflow-y-auto h-full flex flex-col gap-3">
                 {sidebar}
               </aside>
             </div>

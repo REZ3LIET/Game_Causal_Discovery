@@ -175,12 +175,12 @@ function Inner({ level, interventions, nodes, edges, setNodes, setEdges }) {
 
       <EdgesOverlay edges={edges} nodes={nodes} onDeleteEdge={handleDeleteEdge} />
 
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-muted bg-surface/90 px-3 py-1 rounded-full border border-border pointer-events-none whitespace-nowrap z-20">
-        {sourceNode
-          ? <>click target to draw <span className="text-accent font-mono">{sourceNode} →</span> edge · click {sourceNode} again to cancel</>
-          : 'click a node to start an edge · hover an edge to delete it'
-        }
-      </div>
+      {/* Active source indicator — minimal, only shown when drawing */}
+      {sourceNode && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-muted bg-surface/90 px-3 py-1 rounded-full border border-border pointer-events-none whitespace-nowrap z-20">
+          click target to draw <span className="text-accent font-mono">{sourceNode} →</span> edge · click {sourceNode} again to cancel
+        </div>
+      )}
     </div>
   )
 }
