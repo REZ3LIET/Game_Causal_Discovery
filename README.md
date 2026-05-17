@@ -1,4 +1,4 @@
-# Game of Causal Discovery
+![Logo](https://github.com/REZ3LIET/Game_Causal_Discovery/blob/9b017e910293b25e88e03df3bce0d4fd4d8ed121/images/logo.png)
 
 A causal discovery game where players infer directed causal graphs using observations and do-calculus interventions.
 
