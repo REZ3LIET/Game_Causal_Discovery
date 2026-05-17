@@ -2,6 +2,8 @@
 
 A causal discovery game where players infer directed causal graphs using observations and do-calculus interventions.
 
+![Graph](https://github.com/REZ3LIET/Game_Causal_Discovery/blob/main/images/graph.png)
+
 ## Setup
 
 ```bash
